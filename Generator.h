@@ -13,7 +13,11 @@ int isdotorcomma(int symbol);
 class Generator
 {
 private:
-	enum Mode { LETTERS, NUMBERS_AND_LETTERS, ALL_SYMBOLS };
+	enum Mode { 
+		LETTERS, 
+		NUMBERS_AND_LETTERS, 
+		ALL_SYMBOLS 
+	};
 	Mode mode;
 	int length;
 	isfunct status[MODES] = { isalpha,isalnum,issymbol };
