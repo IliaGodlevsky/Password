@@ -8,15 +8,14 @@ int issymbol(int symbol)
 	return (isalnum(symbol) || ispunct(symbol))
 		&& !isdotorcomma(symbol);
 }
-std::string Generator::generate(isfunct status)const
+std::string Generator::generate(isfunct status)
 {
-	std::string password;
 	char letter;
-	while (password.size() < length)
+	while (word.size() < length)
 	{
 		letter = char(rand() % CHAR_MAX + 1);
 		if (status(int(letter)))
-			password += letter;
+			word += letter;
 	}
-	return password;
+	return word;
 }

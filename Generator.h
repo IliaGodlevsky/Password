@@ -17,10 +17,11 @@ private:
 	Mode mode;
 	int length;
 	isfunct status[MODES] = { isalpha,isalnum,issymbol };
+	std::string word;
 public:
 	Generator(int mode_, int size) 
 		: mode(Mode(mode_)), length(size) {}
-	std::string generate(isfunct status)const;
-	std::string password()const { return generate(status[mode]); }
+	std::string generate(isfunct status);
+	std::string password() { return generate(status[mode]); }
 };
 #endif
