@@ -5,15 +5,14 @@ void mode_menu()
 {
 	std::cout << "Choose mode of generating\n";
 	std::cout << "1. Letters\n";
-	std::cout << "2. Letters ans numbers\n";
-	std::cout << "3. Symbols, numbers and letters\n";
+	std::cout << "2. and numbers\n";
+	std::cout << "3. and symbols\n";
 }
 void length_menu()
 {
-	std::cout << "Choose the length of password\n";
-	std::cout << "Max length is: " << MAX_LENGTH << std::endl;
-	std::cout << "Min length is: " << MIN_LENGTH << std::endl;
-	std::cout << "Length: ";
+	std::cout << "Enter length of password ";
+	std::cout << "( " << MAX_LENGTH << " - ";
+	std::cout << MIN_LENGTH << "): ";
 }
 int input(int upper, int bottom)
 {
