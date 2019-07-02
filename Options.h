@@ -1,5 +1,12 @@
-#ifndef OPTIONS_H_
-#define OPTIONS_H_
+#ifndef OPT_H_
+#define OPT_H_
+#include "Constants.h"
+#include "Generator.h"
+bool wrong(int choice, int upper, int bottom);
+int input(int upper, int bottom);
+void length_menu();
+void mode_menu();
+void eat_line();
 class Options
 {
 private:
@@ -11,7 +18,7 @@ public:
     Options(const Options& op) = delete;
     void set_mode();
     void set_length();
-	int get_mode()const { return mode; }
-	int get_length()const { return length; }
+	unsigned int get_mode()const { return mode; }
+	unsigned int get_length()const { return length; }
 };
 #endif
