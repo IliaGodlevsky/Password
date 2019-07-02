@@ -11,7 +11,7 @@ void mode_menu()
 void length_menu()
 {
 	std::cout << "Enter length of password ";
-	std::cout << "( " << MIN_LENGTH << " - ";
+	std::cout << "(" << MIN_LENGTH << " - ";
 	std::cout << MAX_LENGTH << "): ";
 }
 int input(int upper, int bottom)
