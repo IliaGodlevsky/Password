@@ -21,3 +21,5 @@ Debug/vc141.idb
 Debug/vc141.pdb
 Password.vcxproj
 Password.vcxproj.filters
+*.obj
+*.tlog
