@@ -33,7 +33,8 @@ void eat_line()
 }
 bool wrong(int choice, int upper, int bottom)
 {
-	return choice < bottom || choice > upper || !std::cin;
+	return choice < bottom 
+		|| choice > upper || !std::cin;
 }
 int issymbol(int symbol)
 {
