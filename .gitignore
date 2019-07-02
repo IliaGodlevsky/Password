@@ -23,3 +23,8 @@ Password.vcxproj
 Password.vcxproj.filters
 *.obj
 *.tlog
+Debug/Functions.obj
+Debug/Generator.obj
+Debug/Options.obj
+*.obj
+*.idb
