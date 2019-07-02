@@ -2,11 +2,6 @@
 #define OPT_H_
 #include "Constants.h"
 #include "Generator.h"
-bool wrong(int choice, int upper, int bottom);
-int input(int upper, int bottom);
-void length_menu();
-void mode_menu();
-void eat_line();
 class Options
 {
 private:

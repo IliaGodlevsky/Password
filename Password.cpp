@@ -1,10 +1,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
-#include "Constants.h"
-#include "Generator.h"
 #include "Options.h"
-void in_file(std::ostream& os, Generator& gen);
 int main()
 {
 	using namespace std;
@@ -17,19 +14,7 @@ int main()
 	int length = options.get_length();
 	Generator generator(mode, length);
 	fout.open(filename);
-	in_file(fout, generator);
+	generator.in_file(fout);
 	fout.close();
 	system("pause");
-}
-void in_file(std::ostream& os, Generator& gen)
-{
-	std::string password;
-	int count = 0;
-	while (count < EXAMPLES)
-	{
-		password = gen.create_password();
-		os << password;
-		os << std::endl;
-		count++;
-	}
 }
