@@ -1,14 +1,10 @@
 #include "Generator.h"
-int isdotorcomma(int symbol)
+Generator::Generator(const Options& opt)
 {
-	return symbol == '.' || symbol == ',';
+	mode = Mode(opt.get_mode());
+	length = opt.get_length();
 }
-int issymbol(int symbol)
-{
-	return (isalnum(symbol) || ispunct(symbol))
-		&& !isdotorcomma(symbol);
-}
-std::string Generator::generate(isfunct status)
+std::string Generator::generate(int(*status)(int))
 {
 	char letter;
 	while (word.size() < length)
@@ -18,4 +14,15 @@ std::string Generator::generate(isfunct status)
 			word += letter;
 	}
 	return word;
+}
+std::string Generator::password(bool(*has)(const std::string&))
+{
+	word = generate(status[mode]);
+	while (!has(word))
+		word = generate(status[mode]);
+	return word;
+}
+std::string Generator::create_password()
+{
+	return password(has_symbols[mode]);
 }
