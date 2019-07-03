@@ -43,7 +43,7 @@ bool wrong(int choice, int upper, int bottom)
 int issymbol(int symbol)
 {
 	return 
-		isalnum(symbol) || 
+		isalpha(symbol) || isalnum(symbol) || 
 		strchr(symbols, symbol) != nullptr;
 }
 bool has_letters(const std::string& pass)
