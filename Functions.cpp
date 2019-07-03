@@ -78,7 +78,7 @@ std::string password_symbols()
 }
 void report(int length, int mode, int examples)
 {
-	std::cout << "Password length: " << length << "\n";
+	std::cout << "Password length: " << length + 1 << "\n";
 	std::cout << "Mode of creating: ";
 	switch (mode)
 	{
