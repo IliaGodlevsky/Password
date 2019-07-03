@@ -1,14 +1,17 @@
 #include <iostream>
 #include <cstring>
-#include <vector>
 #include "Functions.h"
 #include "Constants.h"
 void mode_menu()
 {
 	std::cout << "Choose mode of generating\n";
 	std::cout << "1. only letters\n";
-	std::cout << "2. numbers and letters\n";
-	std::cout << "3. symbols, numbers and letters\n";
+	std::cout << "2. only digits\n";
+	std::cout << "3. only symbols\n";
+	std::cout << "4. digits and letters\n";
+	std::cout << "5. letters and symbols\n";
+	std::cout << "6. digits and symbols\n";
+	std::cout << "7. symbols, digits and letters\n";
 }
 void length_menu()
 {
@@ -42,28 +45,53 @@ bool wrong(int choice, int upper, int bottom)
 }
 int issymbol(int symbol)
 {
-	return 
-		isalpha(symbol) || isalnum(symbol) || 
-		strchr(symbols, symbol) != nullptr;
+	return strchr(symbols, symbol) != nullptr;
+}
+int isdigit_or_letter(int symbol)
+{
+	return isdigit(symbol) || isalpha(symbol);
+}
+int isletter_or_symbol(int symbol)
+{
+	return isalpha(symbol) || issymbol(symbol);
+}
+int isdigit_or_symbol(int symbol)
+{
+	return isdigit(symbol) || issymbol(symbol);
+}
+int isletter_or_digit_or_symbol(int symbol)
+{
+	return isdigit(symbol) || issymbol(symbol) || isalpha(symbol);
 }
 bool has_letters(const std::string& pass)
 {
-	return
+	return 
 		strpbrk(pass.c_str(), lower_letters) != nullptr &&
 		strpbrk(pass.c_str(), upper_letters) != nullptr;
 }
-bool has_numbers(const std::string& pass)
+bool has_digits(const std::string& pass)
 {
-	return 
-		has_letters(pass) && 
-		strpbrk(pass.c_str(), numbers) != nullptr;
+	return strpbrk(pass.c_str(), numbers) != nullptr;
 }
 bool has_symbols(const std::string& pass)
 {
-	return
-		has_letters(pass) &&
-		has_numbers(pass) &&
-		strpbrk(pass.c_str(), symbols) != nullptr;
+	return strpbrk(pass.c_str(), symbols) != nullptr;
+}
+bool has_digits_and_letters(const std::string& pass)
+{
+	return has_digits(pass) && has_letters(pass);
+}
+bool has_letters_and_symbols(const std::string& pass)
+{
+	return has_letters(pass) && has_symbols(pass);
+}
+bool has_digits_and_symbols(const std::string& pass)
+{
+	return has_digits(pass) && has_symbols(pass);
+}
+bool has_symbols_digits_and_letters(const std::string& pass)
+{
+	return has_letters(pass) && has_digits(pass) && has_symbols(pass);
 }
 std::string password_symbols()
 {
