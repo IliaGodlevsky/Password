@@ -11,6 +11,7 @@ private:
 	unsigned int mode;
 	unsigned int length;
 protected:
+	// arrays of pointer to function
 	is_char status[MODES] = { isalpha,isalnum,
 		issymbol };
 	has_char has_symbols[MODES] = { has_letters,
