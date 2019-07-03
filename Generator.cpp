@@ -34,10 +34,10 @@ std::string Generator::create_password()
 {
 	return password(has_symbols[mode]);
 }
-void Generator::in_file(std::ostream& os)
+void Generator::in_file(std::ostream& os, int examples)
 {
 	std::string password;
-	for (int i = 0; i < EXAMPLES; i++)
+	for (int i = 0; i < examples; i++)
 	{
 		password = create_password();
 		os << password;

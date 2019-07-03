@@ -20,6 +20,6 @@ public:
 	std::string generate(is_char is);
 	std::string password(has_char has);
 	std::string create_password();
-	void in_file(std::ostream& os);
+	void in_file(std::ostream& os, int examples);
 };
 #endif
