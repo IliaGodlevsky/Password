@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "Functions.h"
 #include "Constants.h"
 void mode_menu()
@@ -74,4 +75,16 @@ std::string password_symbols()
 	for (int i = 0; i < SYMBOLS_TYPES; i++)
 		word += chars[i];
 	return word;
+}
+void report(int length, int mode, int examples)
+{
+	std::cout << "Password length: " << length << "\n";
+	std::cout << "Mode of creating: ";
+	switch (mode)
+	{
+	case LETTERS: std::cout << "only letters\n"; break;
+	case NUMBERS: std::cout << "numbers and letters\n"; break;
+	case SYMBOLS: std::cout << "symbols, numbers and letters\n"; break;
+	}
+	std::cout << "File: " << filename << std::endl;
 }

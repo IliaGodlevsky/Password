@@ -1,11 +1,12 @@
 #pragma once
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
-static const int MIN_LENGTH = 8;
-static const int MAX_LENGTH = 25;
+enum { LETTERS, NUMBERS, SYMBOLS };
+static const int MIN_LENGTH = 8;	// WARNING: do not make it equal less than 4. Endless loop alert!
+static const int MAX_LENGTH = 18;
 static const int MODES = 3;
 static const int SYMBOLS_TYPES = 4;
-static const int EXAMPLES = 30;
+static const int EXAMPLES = 50;
 static const char* lower_letters = "abcdefghijklmnopqrstuvwxyz";
 static const char* upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const char* symbols = "|%*)?@#$~|%*)?@#$~";

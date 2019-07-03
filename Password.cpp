@@ -16,5 +16,6 @@ int main()
 	fout.open(filename);
 	generator.in_file(fout, EXAMPLES);
 	fout.close();
+	report(length, mode, EXAMPLES);
 	system("pause");
 }

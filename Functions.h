@@ -14,4 +14,5 @@ void length_menu();
 void mode_menu();
 void eat_line();
 std::string password_symbols();
+void report(int length, int mode, int examples);
 #endif

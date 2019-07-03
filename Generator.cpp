@@ -16,7 +16,7 @@ std::string Generator::generate(is_char is)
 	{
 		number = rand() % chars.size();
 		letter = chars[number];
-		if (is(int(letter)))
+		if (is(letter))
 			word += letter;
 	}
 	return word;
