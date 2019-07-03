@@ -10,12 +10,6 @@ class Generator
 private:
 	unsigned int mode;
 	unsigned int length;
-protected:
-	// arrays of pointer to function
-	is_char status[MODES] = { isalpha,isalnum,
-		issymbol };
-	has_char has_symbols[MODES] = { has_letters,
-		has_numbers,has_symbols_and_numbers };
 public:
 	Generator(int mode, int length);
 	std::string generate(is_char is);

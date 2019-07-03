@@ -32,7 +32,7 @@ std::string Generator::password(has_char has)
 }
 std::string Generator::create_password()
 {
-	return password(has_symbols[mode]);
+	return password(has[mode]);
 }
 void Generator::in_file(std::ostream& os, int examples)
 {

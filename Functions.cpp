@@ -1,13 +1,15 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 #include "Functions.h"
 #include "Constants.h"
 void mode_menu()
 {
+	std::vector<std::string> temp;
 	std::cout << "Choose mode of generating\n";
 	std::cout << "1. letters\n";
-	std::cout << "2. and numbers\n";
-	std::cout << "3. and symbols\n";
+	std::cout << "2. numbers\n";
+	std::cout << "3. symbols\n";
 }
 void length_menu()
 {
@@ -57,7 +59,7 @@ bool has_numbers(const std::string& pass)
 		has_letters(pass) && 
 		strpbrk(pass.c_str(), numbers) != nullptr;
 }
-bool has_symbols_and_numbers(const std::string& pass)
+bool has_symbols(const std::string& pass)
 {
 	return
 		has_letters(pass) &&
