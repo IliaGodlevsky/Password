@@ -5,14 +5,14 @@
 class Options
 {
 private:
-	unsigned int mode;
-	unsigned int length;
+	int mode;
+	int length;
     int set_option(void(*menu)(), int upper, int bottom);
 public:
 	Options();
     void set_mode();
     void set_length();
-	unsigned int get_mode()const { return mode; }
-	unsigned int get_length()const { return length; }
+	int get_mode()const { return mode; }
+	int get_length()const { return length; }
 };
 #endif

@@ -6,9 +6,9 @@
 void mode_menu()
 {
 	std::cout << "Choose mode of generating\n";
-	std::cout << "1. letters\n";
-	std::cout << "2. numbers\n";
-	std::cout << "3. symbols\n";
+	std::cout << "1. only letters\n";
+	std::cout << "2. numbers and letters\n";
+	std::cout << "3. symbols, numbers and letters\n";
 }
 void length_menu()
 {
@@ -76,16 +76,4 @@ std::string password_symbols()
 	for (int i = 0; i < SYMBOLS_TYPES; i++)
 		word += chars[i];
 	return word;
-}
-void report(int length, int mode, int examples)
-{
-	std::cout << "Password length: " << length + 1 << "\n";
-	std::cout << "Mode of creating: ";
-	switch (mode)
-	{
-	case LETTERS: std::cout << "only letters\n"; break;
-	case NUMBERS: std::cout << "numbers and letters\n"; break;
-	case SYMBOLS: std::cout << "symbols, numbers and letters\n"; break;
-	}
-	std::cout << "File: " << filename << std::endl;
 }

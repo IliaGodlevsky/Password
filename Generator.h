@@ -8,8 +8,8 @@
 class Generator
 {
 private:
-	unsigned int mode;
-	unsigned int length;
+	int mode;
+	int length;
 public:
 	Generator(int mode, int length);
 	std::string generate(is_char is);
