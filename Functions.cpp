@@ -33,16 +33,28 @@ void eat_line()
 }
 bool wrong(int choice, int upper, int bottom)
 {
-	return choice < bottom 
-		|| choice > upper || !std::cin;
+	return 
+		choice < bottom || 
+		choice > upper || 
+		!std::cin;
 }
 int issymbol(int symbol)
 {
-	return isalnum(symbol) || strchr(symbols, symbol) != nullptr;
+	return 
+		isalnum(symbol) || 
+		strchr(symbols, symbol) != nullptr;
+}
+bool has_letters(const std::string& pass)
+{
+	return
+		strpbrk(pass.c_str(), lower_letters) != nullptr &&
+		strpbrk(pass.c_str(), upper_letters) != nullptr;
 }
 bool has_numbers(const std::string& pass)
 {
-	return strpbrk(pass.c_str(), numbers) != nullptr;
+	return 
+		has_letters(pass) && 
+		strpbrk(pass.c_str(), numbers) != nullptr;
 }
 bool has_symbols_and_numbers(const std::string& pass)
 {

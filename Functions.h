@@ -4,7 +4,7 @@
 using is_char = int(*)(int);
 using has_char = bool(*)(const std::string&);
 
-inline bool has_letters(const std::string& pass) { return true; }
+bool has_letters(const std::string& pass);
 bool has_symbols_and_numbers(const std::string& pass);
 bool wrong(int choice, int upper, int bottom);
 bool has_numbers(const std::string& pass);
