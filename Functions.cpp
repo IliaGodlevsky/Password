@@ -5,7 +5,6 @@
 #include "Constants.h"
 void mode_menu()
 {
-	std::vector<std::string> temp;
 	std::cout << "Choose mode of generating\n";
 	std::cout << "1. letters\n";
 	std::cout << "2. numbers\n";
