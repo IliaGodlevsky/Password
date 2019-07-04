@@ -8,8 +8,8 @@ int main()
 	using namespace std;
 	srand(unsigned(time(nullptr)));
 	ofstream fout;
-	int mode = set_option(mode_menu, MODES, 1);
-	int length = set_option(length_menu, MAX_LENGTH, MIN_LENGTH);
+	unsigned mode = set_option(mode_menu, MODES, 1);
+	unsigned length = set_option(length_menu, MAX_LENGTH, MIN_LENGTH);
 	Generator generator(mode, length);
 	fout.open(filename);
 	generator.in_file(fout, EXAMPLES);

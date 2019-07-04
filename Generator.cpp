@@ -1,16 +1,11 @@
 #include <algorithm>
 #include "Generator.h"
-Generator::Generator(int mode, int length)
-{
-	this->mode = mode;
-	this->length = length;
-}
 std::string Generator::generate(is_char is)
 {
 	std::string word;
 	std::string chars = password_symbols();
-	char letter;
-	int number;
+	char letter;	
+	unsigned number;
 	while (word.size() <= length)
 	{
 		number = rand() % chars.size();
@@ -32,8 +27,8 @@ std::string Generator::create_password()
 {
 	return password(has[mode]);
 }
-void Generator::in_file(std::ostream& os, int examples)
+void Generator::in_file(std::ostream& os, unsigned examples)
 {
-	for (int i = 0; i < examples; i++)
+	for (unsigned i = 0; i < examples; i++)
 		os << create_password() << std::endl;
 }

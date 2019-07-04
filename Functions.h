@@ -22,5 +22,5 @@ void length_menu();
 void mode_menu();
 void eat_line();
 std::string password_symbols();
-int set_option(void(*menu)(), int upper, int bottom);
+unsigned set_option(void(*menu)(), unsigned upper, unsigned bottom);
 #endif
