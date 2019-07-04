@@ -8,3 +8,4 @@ Password.vcxproj.filters
 *.log
 *.pdb
 *.res
+Debug/Resource.res
