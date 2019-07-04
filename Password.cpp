@@ -1,17 +1,15 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
-#include "Options.h"
+#include "Functions.h"
+#include "Generator.h"
 int main()
 {
 	using namespace std;
 	srand(unsigned(time(nullptr)));
 	ofstream fout;
-	Options options;
-	options.set_mode();
-	options.set_length();
-	int mode = options.get_mode();
-	int length = options.get_length();
+	int mode = set_option(mode_menu, MODES, 1);
+	int length = set_option(length_menu, MAX_LENGTH, MIN_LENGTH);
 	Generator generator(mode, length);
 	fout.open(filename);
 	generator.in_file(fout, EXAMPLES);

@@ -102,3 +102,8 @@ std::string password_symbols()
 	std::random_shuffle(word.begin(), word.end());
 	return word;
 }
+int set_option(void(*menu)(), int upper, int bottom)
+{
+	menu();
+	return input(upper, bottom);
+}

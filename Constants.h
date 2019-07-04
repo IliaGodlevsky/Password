@@ -1,11 +1,13 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 #include "Functions.h"
-static const int MIN_LENGTH = 4;	// WARNING: do not make it equal less than 4. Endless loop alert!
-static const int MAX_LENGTH = 18;
-static const int MODES = 7;
-static const int SYMBOLS_TYPES = 4;
-static const int EXAMPLES = 25;
+enum {
+	MIN_LENGTH = 4,
+	MAX_LENGTH = 18,
+	MODES = 7,
+	SYMBOLS_TYPES = 4,
+	EXAMPLES = 25
+};
 static const is_char status[MODES] = {
 	isalpha,
 	isdigit,
