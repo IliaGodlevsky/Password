@@ -10,12 +10,12 @@ class Generator
 private:
 	unsigned int mode;
 	unsigned int length;
-public:
-	Generator(unsigned mode, unsigned length) :
-		mode(mode), length(length) {}
 	std::string generate(is_char is);
 	std::string password(has_char has);
 	std::string create_password();
+public:
+	Generator(unsigned mode, unsigned length) :
+		mode(mode), length(length) {}
 	void in_file(std::ostream& os, unsigned examples);
 };
 #endif
