@@ -28,5 +28,7 @@ static const char* lower_letters = "abcdefghijklmnopqrstuvwxyz";
 static const char* upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const char* symbols = "|%*)?@#$~|%*)?@#$~";
 static const char* numbers = "01234567890123456789";
+static const char* chars[SYMBOLS_TYPES] = { 
+	upper_letters,lower_letters,numbers,symbols };
 static const char* filename = "Passwords.txt";
 #endif

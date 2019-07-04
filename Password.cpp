@@ -14,7 +14,7 @@ int main()
 	int length = options.get_length();
 	Generator generator(mode, length);
 	fout.open(filename);
-	generator.in_file(fout, EXAMPLES);
+	generator.in_file(cout, EXAMPLES);
 	fout.close();
 	system("pause");
 }

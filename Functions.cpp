@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <algorithm>
 #include "Functions.h"
 #include "Constants.h"
 void mode_menu()
@@ -95,13 +96,9 @@ bool has_symbols_digits_and_letters(const std::string& pass)
 }
 std::string password_symbols()
 {
-	const char* chars[SYMBOLS_TYPES] = {
-		upper_letters,
-		lower_letters,
-		numbers,
-		symbols };
 	std::string word;
 	for (int i = 0; i < SYMBOLS_TYPES; i++)
 		word += chars[i];
+	std::random_shuffle(word.begin(), word.end());
 	return word;
 }

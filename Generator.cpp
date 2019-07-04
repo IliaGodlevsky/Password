@@ -9,7 +9,6 @@ std::string Generator::generate(is_char is)
 {
 	std::string word;
 	std::string chars = password_symbols();
-	std::random_shuffle(chars.begin(), chars.end());
 	char letter;
 	int number;
 	while (word.size() <= length)
@@ -36,11 +35,6 @@ std::string Generator::create_password()
 }
 void Generator::in_file(std::ostream& os, int examples)
 {
-	std::string password;
 	for (int i = 0; i < examples; i++)
-	{
-		password = create_password();
-		os << password;
-		os << std::endl;
-	}
+		os << create_password() << std::endl;
 }
