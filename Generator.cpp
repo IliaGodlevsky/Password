@@ -18,7 +18,6 @@ std::string Generator::generate(is_char is)
 		if (is(letter))
 			word += letter;
 	}
-	std::random_shuffle(word.begin(), word.end());
 	return word;
 }
 std::string Generator::password(has_char has)
