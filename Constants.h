@@ -14,7 +14,7 @@ namespace password
 	{
 		LETTERS_LENGTH = 52,
 		DIGITS_LENGTH = 9,
-		SYMBOLS_LENGTH = 14,
+		SYMBOLS_LENGTH = 16,
 		DIGITS_AND_LETTERS_LENGTH = DIGITS_LENGTH + LETTERS_LENGTH,
 		LETTRS_AND_SYMBOLS_LENGTH = LETTERS_LENGTH + SYMBOLS_LENGTH,
 		DIGITS_AND_SYMBOLS_LENGTH = DIGITS_LENGTH + SYMBOLS_LENGTH,
@@ -49,7 +49,7 @@ namespace password
 	};
 	static const char* lower_letters = "abcdefghijklmnopqrstuvwxyz";
 	static const char* upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	static const char* symbols = "![]{}|%*)?@#$~![]{}|%*)?@#$~";
+	static const char* symbols = "-+![]{}|%*)?@#$~-+![]{}|%*)?@#$~";
 	static const char* digits = "01234567890123456789";
 	static const char* chars[SYMBOLS_TYPES] = {
 		upper_letters,lower_letters,digits,symbols };
