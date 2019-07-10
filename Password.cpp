@@ -13,9 +13,10 @@ int main()
 	Options options;
 	set_options(options);
 	Generator generator(options);
+	generator.create_passwords();
 	fout.open(filename);
-	generator.in_file(cout);
-	generator.in_file(fout);
+	cout << generator;
+	fout << generator;
 	fout.close();
 	system("pause");
 }

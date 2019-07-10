@@ -30,6 +30,5 @@ namespace password
 	int input(int upper, int bottom, const char* msg);
 	bool wrong(int choice, int upper, int bottom);
 	void eat_line();
-	std::string password_symbols();
 }
 #endif

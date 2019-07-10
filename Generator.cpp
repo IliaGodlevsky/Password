@@ -7,48 +7,37 @@ namespace password
 		mode(options.mode),
 		length(options.length){}
 
-	void Generator::remove_duplicates(std::string& word)
+	std::string Generator::generate_symbols(is_char is)
 	{
-		std::sort(word.begin(), word.end());
-		auto duplicates = std::unique(word.begin(), word.end());
-		word.erase(duplicates, word.end());
+		std::string word = strings[mode];
+		std::random_shuffle(word.begin(), word.end());
+		std::string password(word.begin(), word.begin() + length + 1);
+		std::random_shuffle(password.begin(), password.end());
+		return password;
 	}
-	std::string Generator::generate(is_char is)
+	void Generator::create_passwords()
+	{
+		for (int i = 0; i < examples; i++)
+			passwords.push_back(create_password(has[mode]));
+	}
+
+	std::string Generator::create_password(has_char has)
 	{
 		std::string word;
-		std::string chars = password_symbols();
-		char letter;
-		unsigned number;
-		while (word.size() <= length)
+		for (int i = 0; i < examples; i++)
 		{
-			number = rand() % chars.size();
-			letter = chars[number];
-			if (is(letter))
-				word += letter;
-			remove_duplicates(word);
+			word = generate_symbols(is[mode]);
+			while (!has(word))
+				word = generate_symbols(is[mode]);
 		}
-		std::random_shuffle(word.begin(), word.end());
 		return word;
 	}
 
-	void Generator::create_password(has_char has)
+	std::ostream& operator << (std::ostream& os, const Generator& gen)
 	{
-		std::string word;
-		
-		for (int i = 0; i < examples; i++)
-		{
-			word = generate(is[mode]);
-			while (!has(word))
-				word = generate(is[mode]);
-			passwords.push_back(word);
-		}
-	}
-
-	void Generator::in_file(std::ostream& os)
-	{
-		create_password(has[mode]);
-		for (int i = 0; i < examples; i++)
-			os << passwords[i] << std::endl;
+		for (int i = 0; i < gen.examples; i++)
+			os << gen.passwords[i] << std::endl;
+		return os;
 	}
 
 	void set_options(Options& options)

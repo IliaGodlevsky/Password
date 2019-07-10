@@ -20,13 +20,14 @@ namespace password
 		int mode;
 		unsigned length;
 		const int examples;
-		std::string generate(is_char is);
-		void create_password(has_char has);
+		std::string generate_symbols(is_char is);
+		std::string create_password(has_char has);
 		std::vector<std::string> passwords;
-		void remove_duplicates(std::string& word);
 	public:
 		Generator(const Options& options);
-		void in_file(std::ostream& os);
+		friend std::ostream& operator <<
+			(std::ostream& os, const Generator& gen);
+		void create_passwords();
 	};
 	void set_options(Options& options);
 }

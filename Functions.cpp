@@ -7,19 +7,17 @@ namespace password
 {
 	bool has_letters(const std::string& pass)
 	{
-		return
-			strpbrk(pass.c_str(), lower_letters) != nullptr &&
-			strpbrk(pass.c_str(), upper_letters) != nullptr;
+		return strpbrk(pass.c_str(), letters.c_str()) != nullptr;
 	}
 
 	bool has_digits(const std::string& pass)
 	{
-		return strpbrk(pass.c_str(), digits) != nullptr;
+		return strpbrk(pass.c_str(), digits.c_str()) != nullptr;
 	}
 
 	bool has_symbols(const std::string& pass)
 	{
-		return strpbrk(pass.c_str(), symbols) != nullptr;
+		return strpbrk(pass.c_str(), symbols.c_str()) != nullptr;
 	}
 
 	bool has_digits_and_letters(const std::string& pass)
@@ -45,7 +43,7 @@ namespace password
 	int issymbol(int symbol)
 	{
 		// checks, whether the symbol belongs to symbols string
-		return strchr(symbols, symbol) != nullptr;
+		return strchr(symbols.c_str(), symbol) != nullptr;
 	}
 
 	int isdigit_or_letter(int symbol)
@@ -129,14 +127,4 @@ namespace password
 		while (std::cin.get() != '\n')
 			continue;
 	}
-
-	std::string password_symbols()
-	{
-		std::string word;
-		for (int i = 0; i < SYMBOLS_TYPES; i++)
-			word += chars[i];
-		std::random_shuffle(word.begin(), word.end());
-		return word;
-	}
-
 }

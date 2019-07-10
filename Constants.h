@@ -4,6 +4,15 @@
 namespace password
 {
 	enum {
+		LETTERS,
+		DIGITS,
+		SYMBOLS,
+		DIGITS_AND_LETTERS,
+		LETTERS_AND_SYMBOLS,
+		DIGITS_AND_SYMBOLS,
+		DIGITS_AND_LETTERS_AND_SYMBOLS
+	};
+	enum {
 		MIN_LENGTH = 4,
 		MODES = 7,
 		SYMBOLS_TYPES = 4,
@@ -14,7 +23,7 @@ namespace password
 	{
 		LETTERS_LENGTH = 52,
 		DIGITS_LENGTH = 9,
-		SYMBOLS_LENGTH = 16,
+		SYMBOLS_LENGTH = 17,
 		DIGITS_AND_LETTERS_LENGTH = DIGITS_LENGTH + LETTERS_LENGTH,
 		LETTRS_AND_SYMBOLS_LENGTH = LETTERS_LENGTH + SYMBOLS_LENGTH,
 		DIGITS_AND_SYMBOLS_LENGTH = DIGITS_LENGTH + SYMBOLS_LENGTH,
@@ -47,12 +56,20 @@ namespace password
 		has_digits_and_symbols,
 		has_symbols_digits_and_letters
 	};
-	static const char* lower_letters = "abcdefghijklmnopqrstuvwxyz";
-	static const char* upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	static const char* symbols = "-+![]{}|%*)?@#$~-+![]{}|%*)?@#$~";
-	static const char* digits = "01234567890123456789";
-	static const char* chars[SYMBOLS_TYPES] = {
-		upper_letters,lower_letters,digits,symbols };
+	static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
+	static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	static const std::string letters = lower_letters + upper_letters;
+	static const std::string symbols = "-+![]{}|%*)?@#$~-";
+	static const std::string digits = "0123456789";
+	static const std::string strings[MODES] = {
+		letters,
+		digits,
+		symbols,
+		digits + letters,
+		letters + symbols, 
+		digits + symbols,
+		digits + letters + symbols 
+	};
 	static const char* filename = "Passwords.txt";
 }
 #endif
