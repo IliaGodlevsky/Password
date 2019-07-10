@@ -9,14 +9,14 @@ int main()
 	using namespace password;
 	cout << "Password generator\n";
 	srand(unsigned(time(nullptr)));
-	ofstream fout;
 	Options options;
 	set_options(options);
 	Generator generator(options);
 	generator.create_passwords();
+	ofstream fout;
 	fout.open(filename);
-	cout << generator;
 	fout << generator;
 	fout.close();
+	cout << generator;
 	system("pause");
 }
