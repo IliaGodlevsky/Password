@@ -6,13 +6,16 @@
 int main()
 {
 	using namespace std;
+	using namespace password;
+	cout << "Password generator\n";
 	srand(unsigned(time(nullptr)));
 	ofstream fout;
-	unsigned mode = set_option(mode_menu, MODES, 1);
-	unsigned length = set_option(length_menu, MAX_LENGTH, MIN_LENGTH);
-	Generator generator(mode, length);
+	Options options;
+	set_options(options);
+	Generator generator(options);
 	fout.open(filename);
-	generator.in_file(fout, EXAMPLES);
+	generator.in_file(cout);
+	generator.in_file(fout);
 	fout.close();
 	system("pause");
 }
