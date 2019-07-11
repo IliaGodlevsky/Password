@@ -9,3 +9,4 @@ Password.vcxproj.filters
 *.pdb
 *.res
 Debug/Resource.res
+*.user
