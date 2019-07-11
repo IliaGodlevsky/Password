@@ -28,15 +28,6 @@ namespace password
 		DIGITS_AND_SYMBOLS_LENGTH,
 		DIGITS_AND_LETTERS_AND_SYMBOLS_LENGTH,
 	};
-	static const is_char is[MODES] = {
-		isalpha,
-		isdigit,
-		issymbol,
-		isalnum,
-		isletter_or_symbol,
-		isdigit_or_symbol,
-		isletter_or_digit_or_symbol
-	};
 	static const has_char has[MODES] = {
 		has_letters,
 		has_digits,
