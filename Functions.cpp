@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstring>
-#include <algorithm>
 #include "Functions.h"
 #include "Constants.h"
 namespace password

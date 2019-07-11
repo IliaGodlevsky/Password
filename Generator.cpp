@@ -11,9 +11,7 @@ namespace password
 	{
 		std::string word = strings[mode];
 		std::random_shuffle(word.begin(), word.end());
-		std::string password(word.begin(), word.begin() + length + 1);
-		std::random_shuffle(password.begin(), password.end());
-		return password;
+		return std::string(word.begin(), word.begin() + length + 1);
 	}
 	void Generator::create_passwords()
 	{
@@ -23,13 +21,9 @@ namespace password
 
 	std::string Generator::create_password(has_char has)
 	{
-		std::string word;
-		for (int i = 0; i < examples; i++)
-		{
+		std::string word = generate_symbols(is[mode]);
+		while (!has(word))
 			word = generate_symbols(is[mode]);
-			while (!has(word))
-				word = generate_symbols(is[mode]);
-		}
 		return word;
 	}
 
