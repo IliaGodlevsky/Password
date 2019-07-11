@@ -3,7 +3,6 @@
 #include <string>
 namespace password
 {
-	using is_char = int(*)(int);
 	using has_char = bool(*)(const std::string&);
 	using settings = void(*)(const char*);
 	// 'has' functions
