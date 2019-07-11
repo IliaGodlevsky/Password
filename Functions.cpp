@@ -39,27 +39,6 @@ namespace password
 		return has_letters(pass) && has_digits(pass) && has_symbols(pass);
 	}
 
-	int issymbol(int symbol)
-	{
-		// checks, whether the symbol belongs to symbols string
-		return strchr(symbols.c_str(), symbol) != nullptr;
-	}
-
-	int isletter_or_symbol(int symbol)
-	{
-		return isalpha(symbol) || issymbol(symbol);
-	}
-
-	int isdigit_or_symbol(int symbol)
-	{
-		return isdigit(symbol) || issymbol(symbol);
-	}
-
-	int isletter_or_digit_or_symbol(int symbol)
-	{
-		return isalnum(symbol) || issymbol(symbol);
-	}
-
 	void length_menu(const char* msg)
 	{
 		std::cout << msg;
