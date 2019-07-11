@@ -7,7 +7,7 @@ namespace password
 		mode(options.mode),
 		length(options.length){}
 
-	std::string Generator::generate_symbols(is_char is)
+	std::string Generator::generate_symbols()
 	{
 		std::string word = strings[mode];
 		std::random_shuffle(word.begin(), word.end());
@@ -21,9 +21,9 @@ namespace password
 
 	std::string Generator::create_password(has_char has)
 	{
-		std::string word = generate_symbols(is[mode]);
+		std::string word = generate_symbols();
 		while (!has(word))
-			word = generate_symbols(is[mode]);
+			word = generate_symbols();
 		return word;
 	}
 
