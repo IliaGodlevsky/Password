@@ -6,9 +6,6 @@
 int main()
 {
 	using namespace std;
-	for (int i = 0; i < MODES; i++)
-		cout << lengths[i] << endl;
-	system("pause");
 	cout << "Password generator\n";
 	srand(unsigned(time(nullptr)));
 	Options options;
