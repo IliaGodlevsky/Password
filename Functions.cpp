@@ -46,11 +46,6 @@ namespace password
 		return strchr(symbols.c_str(), symbol) != nullptr;
 	}
 
-	int isdigit_or_letter(int symbol)
-	{
-		return isdigit(symbol) || isalpha(symbol);
-	}
-
 	int isletter_or_symbol(int symbol)
 	{
 		return isalpha(symbol) || issymbol(symbol);
@@ -63,7 +58,7 @@ namespace password
 
 	int isletter_or_digit_or_symbol(int symbol)
 	{
-		return isdigit(symbol) || issymbol(symbol) || isalpha(symbol);
+		return isalnum(symbol) || issymbol(symbol);
 	}
 
 	void length_menu(const char* msg)

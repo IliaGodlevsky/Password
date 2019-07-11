@@ -16,7 +16,6 @@ namespace password
 	bool has_symbols_digits_and_letters(const std::string& pass);
 	// 'is' functions
 	int issymbol(int symbol);
-	int isdigit_or_letter(int symbol);
 	int isletter_or_symbol(int symbol);
 	int isdigit_or_symbol(int symbol);
 	int isletter_or_digit_or_symbol(int symbol);

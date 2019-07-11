@@ -1,7 +1,6 @@
 #ifndef GEN_H_
 #define GEN_H_
 #include <string>
-#include <cctype>
 #include <vector>
 #include <iostream>
 #include "Constants.h"

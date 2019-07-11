@@ -6,7 +6,6 @@ namespace password
 	enum {
 		MIN_LENGTH = 4,
 		MODES = 7,
-		SYMBOLS_TYPES = 4,
 		EXAMPLES_MAX = 200,
 		EXAMPLES_MIN = 5
 	};
@@ -33,7 +32,7 @@ namespace password
 		isalpha,
 		isdigit,
 		issymbol,
-		isdigit_or_letter,
+		isalnum,
 		isletter_or_symbol,
 		isdigit_or_symbol,
 		isletter_or_digit_or_symbol
