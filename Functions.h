@@ -13,11 +13,6 @@ namespace password
 	bool has_letters_and_symbols(const std::string& pass);
 	bool has_digits_and_symbols(const std::string& pass);
 	bool has_symbols_digits_and_letters(const std::string& pass);
-	// 'is' functions
-	int issymbol(int symbol);
-	int isletter_or_symbol(int symbol);
-	int isdigit_or_symbol(int symbol);
-	int isletter_or_digit_or_symbol(int symbol);
 	// menu functions
 	void length_menu(const char* msg);
 	void mode_menu(const char* msg);
