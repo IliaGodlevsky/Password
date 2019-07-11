@@ -6,7 +6,6 @@
 int main()
 {
 	using namespace std;
-	using namespace password;
 	cout << "Password generator\n";
 	srand(unsigned(time(nullptr)));
 	Options options;
