@@ -20,7 +20,7 @@ namespace password
 		unsigned length;
 		const int examples;
 		std::vector<std::string> passwords;
-		std::string generate_symbols(is_char is);
+		std::string generate_symbols();
 		std::string create_password(has_char has);
 	public:
 		Generator(const Options& options);
