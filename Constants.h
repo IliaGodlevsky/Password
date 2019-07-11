@@ -3,17 +3,17 @@
 #include "Functions.h"
 namespace password
 {
-	enum {
+	enum game_constants {
 		MIN_LENGTH = 4,
 		MODES = 7,
 		EXAMPLES_MAX = 200,
 		EXAMPLES_MIN = 5
 	};
-	enum
+	enum password_length
 	{
 		LETTERS_LENGTH = 52,
 		DIGITS_LENGTH = 9,
-		SYMBOLS_LENGTH = 17,
+		SYMBOLS_LENGTH = 16,
 		DIGITS_AND_LETTERS_LENGTH = DIGITS_LENGTH + LETTERS_LENGTH,
 		LETTRS_AND_SYMBOLS_LENGTH = LETTERS_LENGTH + SYMBOLS_LENGTH,
 		DIGITS_AND_SYMBOLS_LENGTH = DIGITS_LENGTH + SYMBOLS_LENGTH,
@@ -49,7 +49,7 @@ namespace password
 	static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
 	static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	static const std::string letters = lower_letters + upper_letters;
-	static const std::string symbols = "-+![]{}|%*)?@#$~-";
+	static const std::string symbols = "-+![]{}|%*)?@#$~";
 	static const std::string digits = "0123456789";
 	static const std::string strings[MODES] = {
 		letters,

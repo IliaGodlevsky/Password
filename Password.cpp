@@ -16,7 +16,7 @@ int main()
 	ofstream fout;
 	fout.open(filename);
 	fout << generator;
-	fout.close();
 	cout << generator;
+	fout.close();
 	system("pause");
 }
