@@ -1,10 +1,9 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 #include "Functions.h"
-static const char* filename = "Passwords.txt";
 static const char* mode_msg = "Choose mode";
-static const char* length_msg = "Enter length of the password: ";
-static const char* example_msg = "Enter number of examples: ";
+static const char* length_msg = "Enter length of the password";
+static const char* example_msg = "Enter number of examples";
 static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
 static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const std::string letters = lower_letters + upper_letters;

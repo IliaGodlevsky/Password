@@ -9,6 +9,9 @@ int main()
 	Generator generator(options);
 	generator.create_passwords();
 	ofstream fout;
+	string filename;
+	cout << "Enter filename: ";
+	cin >> filename;
 	fout.open(filename);
 	fout << generator;
 	cout << generator;
