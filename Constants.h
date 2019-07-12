@@ -1,7 +1,7 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 #include "Functions.h"
-enum game_constants {
+enum {
 	MIN_LENGTH = 4,
 	MODES = 7,
 	EXAMPLES_MAX = 200,
