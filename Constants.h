@@ -30,17 +30,14 @@ static const std::string strings[MODES] = {
 	digits + symbols,
 	digits + letters + symbols 
 };
-static const int LETTERS_LENGTH = letters.size();
-static const int DIGITS_LENGTH = digits.size();
-static const int SYMBOLS_LENGTH = symbols.size();
 static const int lengths[MODES] = {
-	LETTERS_LENGTH,
-	DIGITS_LENGTH,
-	SYMBOLS_LENGTH,
-	DIGITS_LENGTH + LETTERS_LENGTH,
-	LETTERS_LENGTH + SYMBOLS_LENGTH,
-	DIGITS_LENGTH + SYMBOLS_LENGTH,
-	LETTERS_LENGTH + SYMBOLS_LENGTH + DIGITS_LENGTH
+	letters.size(),
+	digits.size(),
+	symbols.size(),
+	digits.size() + letters.size(),
+	letters.size() + symbols.size(),
+	digits.size() + symbols.size(),
+	letters.size() + symbols.size() + digits.size()
 };
 static const char* filename = "Passwords.txt";
 #endif
