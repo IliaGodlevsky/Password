@@ -7,7 +7,7 @@ enum {
 	EXAMPLES_MAX = 200,
 	EXAMPLES_MIN = 5
 };
-static const has_char has[MODES] = {
+static const has_char has[MODES] {
 	has_letters,
 	has_digits,
 	has_symbols,
@@ -21,7 +21,7 @@ static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const std::string letters = lower_letters + upper_letters;
 static const std::string symbols = "-+![]{}|%*)?@#$~";
 static const std::string digits = "0123456789";
-static const std::string strings[MODES] = {
+static const std::string strings[MODES] {
 	letters,
 	digits,
 	symbols,
@@ -30,7 +30,7 @@ static const std::string strings[MODES] = {
 	digits + symbols,
 	digits + letters + symbols 
 };
-static const int lengths[MODES] = {
+static const int lengths[MODES] {
 	letters.size(),
 	digits.size(),
 	symbols.size(),
