@@ -5,14 +5,12 @@
 #include <iostream>
 #include "Constants.h"
 #include "Functions.h"
-struct Options
-{
-	unsigned mode;
-	unsigned length;
-	unsigned examples;
+struct Options { 
+	unsigned mode; 
+	unsigned length; 
+	unsigned examples; 
 };
-class Generator
-{
+class Generator {
 private:
 	unsigned mode;
 	unsigned length;
