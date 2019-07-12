@@ -35,9 +35,7 @@ std::ostream& operator << (std::ostream& os, const Generator& gen)
 
 void set_options(Options& options)
 {
-	options.mode = set_option(mode_menu, MODES, 1, "Choose mode");
-	options.length = set_option(length_menu, lengths[options.mode], 
-		MIN_LENGTH, "Enter length of the password: ");
-	options.examples = set_option(exapmple_menu, EXAMPLES_MAX, 
-		EXAMPLES_MIN, "Enter number of examples of password: ");
+	options.mode = set_option(mode_menu, MODES, 1, mode_msg);
+	options.length = set_option(menu, lengths[options.mode], MIN_LENGTH, length_msg);
+	options.examples = set_option(menu, EXAMPLES_MAX, EXAMPLES_MIN, example_msg);
 }

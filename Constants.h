@@ -7,15 +7,10 @@ enum {
 	EXAMPLES_MAX = 200,
 	EXAMPLES_MIN = 5
 };
-static const has_char has[MODES] {
-	has_letters,
-	has_digits,
-	has_symbols,
-	has_digits_and_letters,
-	has_letters_and_symbols,
-	has_digits_and_symbols,
-	has_symbols_digits_and_letters
-};
+static const char* filename = "Passwords.txt";
+static const char* mode_msg = "Choose mode";
+static const char* length_msg = "Enter length of the password: ";
+static const char* example_msg = "Enter number of examples of password: ";
 static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
 static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const std::string letters = lower_letters + upper_letters;
@@ -39,5 +34,13 @@ static const int lengths[MODES] {
 	digits.size() + symbols.size(),
 	letters.size() + symbols.size() + digits.size()
 };
-static const char* filename = "Passwords.txt";
+static const has_char has[MODES]{
+	has_letters,
+	has_digits,
+	has_symbols,
+	has_digits_and_letters,
+	has_letters_and_symbols,
+	has_digits_and_symbols,
+	has_symbols_digits_and_letters
+};
 #endif

@@ -2,48 +2,35 @@
 #include <cstring>
 #include "Functions.h"
 #include "Constants.h"
-bool has_letters(const std::string& pass)
-{
+bool has_letters(const std::string& pass) {
 	return strpbrk(pass.c_str(), letters.c_str()) != nullptr;
 }
 
-bool has_digits(const std::string& pass)
-{
+bool has_digits(const std::string& pass) {
 	return strpbrk(pass.c_str(), digits.c_str()) != nullptr;
 }
 
-bool has_symbols(const std::string& pass)
-{
+bool has_symbols(const std::string& pass) {
 	return strpbrk(pass.c_str(), symbols.c_str()) != nullptr;
 }
 
-bool has_digits_and_letters(const std::string& pass)
-{
+bool has_digits_and_letters(const std::string& pass) {
 	return has_digits(pass) && has_letters(pass);
 }
 
-bool has_letters_and_symbols(const std::string& pass)
-{
+bool has_letters_and_symbols(const std::string& pass) {
 	return has_letters(pass) && has_symbols(pass);
 }
 
-bool has_digits_and_symbols(const std::string& pass)
-{
+bool has_digits_and_symbols(const std::string& pass) {
 	return has_digits(pass) && has_symbols(pass);
 }
 
-bool has_symbols_digits_and_letters(const std::string& pass)
-{
+bool has_symbols_digits_and_letters(const std::string& pass) {
 	return has_letters(pass) && has_digits(pass) && has_symbols(pass);
 }
 
-void length_menu(const char* msg)
-{
-	std::cout << msg;
-}
-
-void mode_menu(const char* msg)
-{
+void mode_menu(const char* msg) {
 	std::cout << "Modes of generating\n";
 	std::cout << "1. only letters\n";
 	std::cout << "2. only digits\n";
@@ -55,10 +42,7 @@ void mode_menu(const char* msg)
 	std::cout << msg;
 }
 
-void exapmple_menu(const char* msg)
-{
-	std::cout << msg;
-}
+void menu(const char* msg) { std::cout << msg; }
 
 void range(int upper, int bottom)
 {

@@ -12,9 +12,8 @@ bool has_letters_and_symbols(const std::string& pass);
 bool has_digits_and_symbols(const std::string& pass);
 bool has_symbols_digits_and_letters(const std::string& pass);
 // menu functions
-void length_menu(const char* msg);
 void mode_menu(const char* msg);
-void exapmple_menu(const char* msg);
+void menu(const char* msg);
 void range(int upper, int bottom);
 // input functions
 int set_option(settings menu, int upper, int bottom, const char* msg);
