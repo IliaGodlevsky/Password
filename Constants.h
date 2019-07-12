@@ -1,21 +1,22 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 #include "Functions.h"
+static const char* filename = "Passwords.txt";
+static const char* mode_msg = "Choose mode";
+static const char* length_msg = "Enter length of the password: ";
+static const char* example_msg = "Enter number of examples: ";
+static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
+static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+static const std::string letters = lower_letters + upper_letters;
+static const std::string symbols = "-+=;:![]{}|%*()?@#$~&\\/";
+static const std::string digits = "0123456789";
 enum {
 	MIN_LENGTH = 4,
+	MIN_MODE = 1,
 	MODES = 7,
 	EXAMPLES_MAX = 200,
 	EXAMPLES_MIN = 5
 };
-static const char* filename = "Passwords.txt";
-static const char* mode_msg = "Choose mode";
-static const char* length_msg = "Enter length of the password: ";
-static const char* example_msg = "Enter number of examples of password: ";
-static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
-static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-static const std::string letters = lower_letters + upper_letters;
-static const std::string symbols = "-+![]{}|%*)?@#$~";
-static const std::string digits = "0123456789";
 static const std::string strings[MODES] {
 	letters,
 	digits,

@@ -18,10 +18,13 @@ private:
 	unsigned length;
 	const int examples;
 	std::vector<std::string> passwords;
-	std::string generate_symbols();
-	std::string create_password(has_char has);
+	std::string generate_symbols()const;
+	std::string create_password(has_char has)const;
 public:
 	Generator(const Options& options);
+	Generator() = delete;
+	Generator(const Generator& gen) = delete;
+	Generator& operator=(const Generator& gen) = delete;
 	friend std::ostream& operator <<
 		(std::ostream& os, const Generator& gen);
 	void create_passwords();

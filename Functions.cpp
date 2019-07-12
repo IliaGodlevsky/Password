@@ -64,6 +64,7 @@ int input(int upper, int bottom, const char* msg)
 	{
 		eat_line();
 		std::cout << msg;
+		range(upper, bottom);
 		std::cin >> choice;
 	}
 	return choice - 1;

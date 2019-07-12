@@ -1,13 +1,9 @@
 #include <fstream>
-#include <cstdlib>
-#include <ctime>
 #include "Functions.h"
 #include "Generator.h"
 int main()
 {
 	using namespace std;
-	cout << "Password generator\n";
-	srand(unsigned(time(nullptr)));
 	Options options;
 	set_options(options);
 	Generator generator(options);
