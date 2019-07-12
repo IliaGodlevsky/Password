@@ -10,7 +10,7 @@ static const std::string letters = lower_letters + upper_letters;
 static const std::string symbols = "![]{}|%*()?@#$~&";
 static const std::string digits = "0123456789";
 enum {
-	MIN_LENGTH = 4,
+	MIN_LENGTH = 3,
 	MIN_MODE = 1,
 	MODES = 7,
 	EXAMPLES_MAX = 200,

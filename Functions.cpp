@@ -1,17 +1,16 @@
 #include <iostream>
-#include <cstring>
 #include "Functions.h"
 #include "Constants.h"
 bool has_letters(const std::string& pass) {
-	return strpbrk(pass.c_str(), letters.c_str()) != nullptr;
+	return letters.find_first_of(pass) != std::string::npos;
 }
 
 bool has_digits(const std::string& pass) {
-	return strpbrk(pass.c_str(), digits.c_str()) != nullptr;
+	return digits.find_first_of(pass) != std::string::npos;
 }
 
 bool has_symbols(const std::string& pass) {
-	return strpbrk(pass.c_str(), symbols.c_str()) != nullptr;
+	return symbols.find_first_of(pass) != std::string::npos;
 }
 
 bool has_digits_and_letters(const std::string& pass) {
@@ -27,7 +26,7 @@ bool has_digits_and_symbols(const std::string& pass) {
 }
 
 bool has_symbols_digits_and_letters(const std::string& pass) {
-	return has_letters(pass) && has_digits(pass) && has_symbols(pass);
+	return has_digits_and_letters(pass) && has_symbols(pass);
 }
 
 void mode_menu(const char* msg) {
