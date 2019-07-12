@@ -5,7 +5,6 @@
 #include <iostream>
 #include "Constants.h"
 #include "Functions.h"
-
 struct Options
 {
 	int mode;
@@ -28,5 +27,4 @@ public:
 	void create_passwords();
 };
 void set_options(Options& options);
-
 #endif
