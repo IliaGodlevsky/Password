@@ -17,7 +17,7 @@ void menu(const char* msg);
 void range(unsigned upper, unsigned bottom);
 // input functions
 int set_option(settings menu, unsigned upper, unsigned bottom, const char* msg);
-int input(unsigned upper, unsigned bottom, const char* msg);
+unsigned input(unsigned upper, unsigned bottom, const char* msg);
 bool wrong(unsigned choice, unsigned upper, unsigned bottom);
 void eat_line();
 #endif

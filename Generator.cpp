@@ -14,10 +14,12 @@ std::string Generator::generate_symbols()const {
 }
 
 std::string Generator::create_password(has_char has)const {
-	std::string word = generate_symbols();
-	while (!has(word))
-		word = generate_symbols();
-	return word;
+	std::string password = generate_symbols();
+	// if password doesn't have some symbols
+	// that have been chosen, generating repeats
+	while (!has(password))
+		password = generate_symbols();
+	return password;
 }
 
 void Generator::create_passwords() {

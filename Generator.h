@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Constants.h"
 #include "Functions.h"
+// structure for generating options
 struct Options { 
 	unsigned mode; 
 	unsigned length; 
@@ -12,10 +13,10 @@ struct Options {
 };
 class Generator {
 private:
-	unsigned mode;
-	unsigned length;
-	const unsigned examples;
-	std::vector<std::string> passwords;
+	unsigned mode;						// mode of generating passwords
+	unsigned length;					// length of generated password
+	const unsigned examples;			// number of generated examples
+	std::vector<std::string> passwords;	// array of generated passwords
 	std::string generate_symbols()const;
 	std::string create_password(has_char has)const;
 public:

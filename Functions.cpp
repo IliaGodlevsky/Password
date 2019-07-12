@@ -54,8 +54,8 @@ int set_option(settings menu, unsigned upper, unsigned bottom, const char* msg) 
 	return input(upper, bottom, msg);
 }
 
-int input(unsigned upper, unsigned bottom, const char* msg) {
-	int choice;
+unsigned input(unsigned upper, unsigned bottom, const char* msg) {
+	unsigned choice;
 	std::cin >> choice;
 	while (wrong(choice, upper, bottom))
 	{
