@@ -26,7 +26,7 @@ static const std::string strings[MODES] {
 	digits + symbols,
 	digits + letters + symbols 
 };
-static const int lengths[MODES] {
+static const unsigned lengths[MODES] {
 	letters.size(),
 	digits.size(),
 	symbols.size(),

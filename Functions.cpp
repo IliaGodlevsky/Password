@@ -44,19 +44,19 @@ void mode_menu(const char* msg) {
 
 void menu(const char* msg) { std::cout << msg; }
 
-void range(int upper, int bottom)
+void range(unsigned upper, unsigned bottom)
 {
 	std::cout << " (" << bottom << " - ";
 	std::cout << upper << "): ";
 }
-int set_option(settings menu, int upper, int bottom, const char* msg)
+int set_option(settings menu, unsigned upper, unsigned bottom, const char* msg)
 {
 	menu(msg);
 	range(upper, bottom);
 	return input(upper, bottom, msg);
 }
 
-int input(int upper, int bottom, const char* msg)
+int input(unsigned upper, unsigned bottom, const char* msg)
 {
 	int choice;
 	std::cin >> choice;
@@ -70,7 +70,7 @@ int input(int upper, int bottom, const char* msg)
 	return choice - 1;
 }
 
-bool wrong(int choice, int upper, int bottom)
+bool wrong(unsigned choice, unsigned upper, unsigned bottom)
 {
 	return choice < bottom || choice > upper || 
 		!std::cin;

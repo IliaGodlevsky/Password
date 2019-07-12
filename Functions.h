@@ -14,10 +14,10 @@ bool has_symbols_digits_and_letters(const std::string& pass);
 // menu functions
 void mode_menu(const char* msg);
 void menu(const char* msg);
-void range(int upper, int bottom);
+void range(unsigned upper, unsigned bottom);
 // input functions
-int set_option(settings menu, int upper, int bottom, const char* msg);
-int input(int upper, int bottom, const char* msg);
-bool wrong(int choice, int upper, int bottom);
+int set_option(settings menu, unsigned upper, unsigned bottom, const char* msg);
+int input(unsigned upper, unsigned bottom, const char* msg);
+bool wrong(unsigned choice, unsigned upper, unsigned bottom);
 void eat_line();
 #endif

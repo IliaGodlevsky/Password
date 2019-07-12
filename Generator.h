@@ -7,16 +7,16 @@
 #include "Functions.h"
 struct Options
 {
-	int mode;
+	unsigned mode;
 	unsigned length;
-	int examples;
+	unsigned examples;
 };
 class Generator
 {
 private:
-	int mode;
+	unsigned mode;
 	unsigned length;
-	const int examples;
+	const unsigned examples;
 	std::vector<std::string> passwords;
 	std::string generate_symbols()const;
 	std::string create_password(has_char has)const;

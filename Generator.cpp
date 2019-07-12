@@ -18,7 +18,7 @@ std::string Generator::generate_symbols()const
 
 void Generator::create_passwords()
 {
-	for (int i = 0; i < examples; i++)
+	for (size_t i = 0; i < examples; i++)
 		passwords.push_back(create_password(has[mode]));
 }
 
