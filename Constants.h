@@ -8,7 +8,7 @@ static const char* example_msg = "Enter number of examples: ";
 static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
 static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const std::string letters = lower_letters + upper_letters;
-static const std::string symbols = "-+=;:![]{}|%*()?@#$~&\\/";
+static const std::string symbols = "![]{}|%*()?@#$~&";
 static const std::string digits = "0123456789";
 enum {
 	MIN_LENGTH = 4,
