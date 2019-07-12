@@ -3,17 +3,18 @@
 #include "Generator.h"
 int main()
 {
+	using namespace std;
 	Options options;
 	set_options(options);
 	Generator generator(options);
 	generator.create_passwords();
-	std::ofstream fout;
-	std::string filename;
-	std::cout << "Enter filename: ";
-	std::cin >> filename;
+	ofstream fout;
+	string filename;
+	cout << "Enter filename: ";
+	cin >> filename;
 	fout.open(filename);
 	fout << generator;
-	std::cout << generator;
+	cout << generator;
 	fout.close();
 	system("pause");
 }

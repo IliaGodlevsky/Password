@@ -4,11 +4,11 @@
 static const char* mode_msg = "Choose mode";
 static const char* length_msg = "Enter length of the password";
 static const char* example_msg = "Enter number of examples";
-static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
-static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-static const std::string letters = lower_letters + upper_letters;
-static const std::string symbols = "![]{}|%*()?@#$~&";
-static const std::string digits = "0123456789";
+static const string lower_letters = "abcdefghijklmnopqrstuvwxyz";
+static const string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+static const string letters = lower_letters + upper_letters;
+static const string symbols = "![]{}|%*()?@#$~&";
+static const string digits = "0123456789";
 enum {
 	MIN_LENGTH = 3,
 	MIN_MODE = 1,
@@ -16,7 +16,7 @@ enum {
 	EXAMPLES_MAX = 200,
 	EXAMPLES_MIN = 5
 };
-static const std::string strings[MODES] {
+static const string strings[MODES] {
 	letters,
 	digits,
 	symbols,
@@ -38,9 +38,9 @@ static const has_char has[MODES]{
 	has_letters,
 	has_digits,
 	has_symbols,
-	has_digits_and_letters,
-	has_letters_and_symbols,
-	has_digits_and_symbols,
-	has_symbols_digits_and_letters
+	has_digits_letters,
+	has_letters_symbols,
+	has_digits_symbols,
+	has_symbols_digits_letters
 };
 #endif

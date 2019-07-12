@@ -6,15 +6,15 @@ Generator::Generator(const Options& options):
 	mode(options.mode), 
 	length(options.length) {}
 
-std::string Generator::generate_symbols()const {
+string Generator::generate_symbols()const {
 	std::random_device random;
-	std::string word = strings[mode];
+	string word = strings[mode];
 	std::shuffle(word.begin(), word.end(), std::mt19937(random()));
-	return std::string(word.begin(), word.begin() + length + 1);
+	return string(word.begin(), word.begin() + length + 1);
 }
 
-std::string Generator::create_password(has_char has)const {
-	std::string password = generate_symbols();
+string Generator::create_password(has_char has)const {
+	string password = generate_symbols();
 	// if password doesn't have some symbols
 	// that have been chosen, generating repeats
 	while (!has(password))
@@ -23,11 +23,11 @@ std::string Generator::create_password(has_char has)const {
 }
 
 void Generator::create_passwords() {
-	for (size_t i = 0; i < examples; i++)
+	for (unsigned i = 0; i < examples; i++)
 		passwords.push_back(create_password(has[mode]));
 }
 
-std::ostream& operator << (std::ostream& os, const Generator& gen) {
+ostream& operator << (ostream& os, const Generator& gen) {
 	for (auto &x : gen.passwords) os << x << std::endl;
 	return os;
 }
