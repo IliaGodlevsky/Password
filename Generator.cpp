@@ -11,6 +11,7 @@ std::string Generator::generate_symbols()
 	std::random_shuffle(word.begin(), word.end());
 	return std::string(word.begin(), word.begin() + length + 1);
 }
+
 void Generator::create_passwords()
 {
 	for (int i = 0; i < examples; i++)
