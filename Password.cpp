@@ -4,6 +4,8 @@ int main()
 {
 	Options options;
 	Generator generator;
-	generate(options, generator);
+	do 
+		generate(options, generator); 
+	while (set_option(menu, YES, NO, ans) + 1);
 	system("pause");
 }

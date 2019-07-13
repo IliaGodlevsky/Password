@@ -50,15 +50,12 @@ void set_options(Options& options) {
 
 void generate(Options& opt, Generator& gen){
 	ofstream fout;
-	do {
-		system("cls");
-		set_options(opt);
-		gen.reset_options(opt);
-		gen.create_passwords();
-		fout.open(save_path());
-		fout << gen;
-		cout << gen;
-		fout.close();
-	}
-	while (set_option(menu, YES, NO, ans) + 1);
+	system("cls");
+	set_options(opt);
+	gen.reset_options(opt);
+	gen.create_passwords();
+	fout.open(save_path());
+	fout << gen;
+	cout << gen;
+	fout.close();
 }
