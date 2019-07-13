@@ -1,18 +1,22 @@
 #ifndef GEN_H_
 #define GEN_H_
+
 #include <string>
 #include <vector>
 #include <iostream>
 #include "Constants.h"
 #include "Functions.h"
+
 using std::vector;
 using std::string;
 using std::ostream;
+
 struct Settings { 
 	unsigned mode = MIN_MODE;			// mode of generating passwords
 	unsigned length = MIN_LENGTH;		// length of generated password
 	unsigned examples = EXAMPLES_MIN;	// number of generated examples
 };
+
 class Generator {
 private:
 	Settings settings;
@@ -26,6 +30,7 @@ public:
 	Generator& operator=(const Settings& settings);
 	void create_passwords();
 };
+
 void set_settings(Settings& settings);
 void generate(Settings& opt, Generator& gen);
 #endif

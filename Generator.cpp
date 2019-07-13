@@ -2,9 +2,11 @@
 #include <random>
 #include <fstream>
 #include "Generator.h"
+
 using std::cout;
 using std::cin;
 using std::ofstream;
+
 Generator::Generator(const Settings& settings) :
 	settings(settings) {}
 

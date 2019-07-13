@@ -1,8 +1,10 @@
 #include <iostream>
 #include "Functions.h"
 #include "Constants.h"
+
 using std::cout;
 using std::cin;
+
 bool has_letters(const string& pass) { 
 	return letters.find_first_of(pass) != string::npos;
 }
