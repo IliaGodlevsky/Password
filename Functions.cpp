@@ -49,7 +49,7 @@ void range(unsigned upper, unsigned bottom) {
 	cout << " (" << bottom << " - ";
 	cout << upper << "): ";
 }
-unsigned set_option(settings menu, unsigned upper, unsigned bottom, const char* msg) {
+unsigned set_option(options menu, unsigned upper, unsigned bottom, const char* msg) {
 	menu(msg);
 	range(upper, bottom);
 	return input(upper, bottom, msg);

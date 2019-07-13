@@ -3,7 +3,7 @@
 #include <string>
 using std::string;
 using has_char = bool(*)(const string&);
-using settings = void(*)(const char*);
+using options = void(*)(const char*);
 // 'has' functions
 bool has_letters(const string& pass);
 bool has_digits(const string& pass);
@@ -17,7 +17,7 @@ void mode_menu(const char* msg);
 void menu(const char* msg);
 void range(unsigned upper, unsigned bottom);
 // input functions
-unsigned set_option(settings menu, unsigned upper, unsigned bottom, const char* msg);
+unsigned set_option(options menu, unsigned upper, unsigned bottom, const char* msg);
 unsigned input(unsigned upper, unsigned bottom, const char* msg);
 bool wrong(unsigned choice, unsigned upper, unsigned bottom);
 string save_path();

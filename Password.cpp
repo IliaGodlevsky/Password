@@ -2,7 +2,7 @@
 #include "Generator.h"
 int main()
 {
-	Options options;
+	Settings options;
 	Generator generator;
 	do 
 		generate(options, generator); 

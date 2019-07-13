@@ -5,16 +5,14 @@
 using std::cout;
 using std::cin;
 using std::ofstream;
-Generator::Generator(const Options& options):
-	examples(options.examples),
-	mode(options.mode), 
-	length(options.length) {}
+Generator::Generator(const Settings& settings) :
+	settings(settings) {}
 
 string Generator::generate_symbols()const {
 	std::random_device random;
-	string word = strings[mode];
+	string word = strings[settings.mode];
 	std::shuffle(word.begin(), word.end(), std::mt19937(random()));
-	return string(word.begin(), word.begin() + length + 1);
+	return string(word.begin(), word.begin() + settings.length + 1);
 }
 
 string Generator::create_password(has_char has)const {
@@ -25,8 +23,8 @@ string Generator::create_password(has_char has)const {
 }
 
 void Generator::create_passwords() {
-	for (unsigned i = 0; i < examples; i++)
-		passwords.push_back(create_password(has[mode]));
+	for (unsigned i = 0; i < settings.examples; i++)
+		passwords.push_back(create_password(has[settings.mode]));
 }
 
 ostream& operator << (ostream& os, const Generator& gen) {
@@ -34,25 +32,26 @@ ostream& operator << (ostream& os, const Generator& gen) {
 	return os;
 }
 
-void Generator::reset_options(const Options& options)
+Generator&::Generator::operator=(const Settings& settings)
 {
-	mode = options.mode;
-	length = options.length;
-	examples = options.examples;
+	this->settings.mode = settings.mode;
+	this->settings.length = settings.length;
+	this->settings.examples = settings.examples;
 	passwords.clear();
+	return *this;
 }
 
-void set_options(Options& options) {
-	options.mode = set_option(mode_menu, MODES, MIN_MODE, mode_msg);
-	options.length = set_option(menu, lengths[options.mode], MIN_LENGTH, length_msg);
-	options.examples = set_option(menu, EXAMPLES_MAX, EXAMPLES_MIN, example_msg);
+void set_settings(Settings& settings) {
+	settings.mode = set_option(mode_menu, MODES, MIN_MODE, mode_msg);
+	settings.length = set_option(menu, lengths[settings.mode], MIN_LENGTH, length_msg);
+	settings.examples = set_option(menu, EXAMPLES_MAX, EXAMPLES_MIN, example_msg);
 }
 
-void generate(Options& opt, Generator& gen){
+void generate(Settings& set, Generator& gen){
 	ofstream fout;
 	system("cls");
-	set_options(opt);
-	gen.reset_options(opt);
+	set_settings(set);
+	gen = set;
 	gen.create_passwords();
 	fout.open(save_path());
 	fout << gen;
