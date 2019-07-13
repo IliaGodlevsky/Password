@@ -72,6 +72,14 @@ bool wrong(unsigned choice, unsigned upper, unsigned bottom) {
 	return choice < bottom || choice > upper || !cin;
 }
 
+string save_path()
+{
+	string filename;
+	cout << "Enter filename: ";
+	cin >> filename;
+	return save_folder + filename;
+}
+
 void eat_line() {
 	// cuts symbols in the input stream
 	cin.clear();

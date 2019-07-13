@@ -20,5 +20,6 @@ void range(unsigned upper, unsigned bottom);
 unsigned set_option(settings menu, unsigned upper, unsigned bottom, const char* msg);
 unsigned input(unsigned upper, unsigned bottom, const char* msg);
 bool wrong(unsigned choice, unsigned upper, unsigned bottom);
+string save_path();
 void eat_line();
 #endif

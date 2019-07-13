@@ -1,6 +1,7 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 #include "Functions.h"
+static const char* ans = "One more";
 static const char* mode_msg = "Choose mode";
 static const char* length_msg = "Enter length of the password";
 static const char* example_msg = "Enter number of examples";
@@ -9,12 +10,14 @@ static const string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const string letters = lower_letters + upper_letters;
 static const string symbols = "![]{}|%*()?@#$~&";
 static const string digits = "0123456789";
+static const char* save_folder = "Save/";
 enum {
+	NO, YES,
 	MIN_LENGTH = 3,
 	MIN_MODE = 1,
 	MODES = 7,
-	EXAMPLES_MAX = 200,
-	EXAMPLES_MIN = 5
+	EXAMPLES_MAX = 50,
+	EXAMPLES_MIN = 10
 };
 static const string strings[MODES] {
 	letters,

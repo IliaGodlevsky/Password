@@ -8,7 +8,6 @@
 using std::vector;
 using std::string;
 using std::ostream;
-// structure for Generator options
 struct Options { 
 	unsigned mode; 
 	unsigned length; 
@@ -16,19 +15,20 @@ struct Options {
 };
 class Generator {
 private:
-	unsigned mode;						// mode of generating passwords
-	unsigned length;					// length of generated password
-	const unsigned examples;			// number of generated examples
+	unsigned mode = MIN_MODE;			// mode of generating passwords
+	unsigned length = MIN_LENGTH;		// length of generated password
+	unsigned examples = EXAMPLES_MIN;	// number of generated examples
 	vector<string> passwords;			// array of generated passwords
 	string generate_symbols()const;
 	string create_password(has_char has)const;
 public:
+	Generator() {}
 	Generator(const Options& options);
-	Generator() = delete;
-	Generator(const Generator& gen) = delete;
 	Generator& operator=(const Generator& gen) = delete;
 	friend ostream& operator << (ostream& os, const Generator& gen);
 	void create_passwords();
+	void reset_options(const Options& options);
 };
 void set_options(Options& options);
+void generate(Options& opt, Generator& gen);
 #endif

@@ -10,3 +10,6 @@ Password.vcxproj.filters
 *.res
 Debug/Resource.res
 *.user
+*.aps
+*.rc
+resource.h
