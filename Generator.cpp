@@ -1,19 +1,24 @@
 #include <algorithm>
 #include <random>
 #include <fstream>
+
 #include "Generator.h"
 
 using std::cout;
 using std::cin;
+using std::endl;
 using std::ofstream;
+using std::random_device;
+using std::mt19937;
+using std::shuffle;
 
 Generator::Generator(const Settings& settings) :
 	settings(settings) {}
 
 string Generator::generate_symbols()const {
-	std::random_device random;
+	random_device random;
 	string word = strings[settings.mode];
-	std::shuffle(word.begin(), word.end(), std::mt19937(random()));
+	shuffle(word.begin(), word.end(), mt19937(random()));
 	return string(word.begin(), word.begin() + settings.length + 1);
 }
 
@@ -30,7 +35,7 @@ void Generator::create_passwords() {
 }
 
 ostream& operator << (ostream& os, const Generator& gen) {
-	for (auto &x : gen.passwords) os << x << std::endl;
+	for (auto &x : gen.passwords) os << x << endl;
 	return os;
 }
 

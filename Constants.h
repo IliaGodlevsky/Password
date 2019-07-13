@@ -7,12 +7,13 @@ static const char* ans = "One more";
 static const char* mode_msg = "Choose mode";
 static const char* length_msg = "Enter length of the password";
 static const char* example_msg = "Enter number of examples";
+static const char* save_folder = "Save/";
+
 static const string lower_letters = "abcdefghijklmnopqrstuvwxyz";
 static const string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static const string letters = lower_letters + upper_letters;
 static const string symbols = "![]{}|%*()?@#$~&";
 static const string digits = "0123456789";
-static const char* save_folder = "Save/";
 
 enum {
 	NO, YES,

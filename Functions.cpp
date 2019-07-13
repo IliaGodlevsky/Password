@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Functions.h"
 #include "Constants.h"
 
@@ -6,15 +7,15 @@ using std::cout;
 using std::cin;
 
 bool has_letters(const string& pass) { 
-	return letters.find_first_of(pass) != string::npos;
+	return letters.find_first_of(pass) != NOT_FOUND;
 }
 
 bool has_digits(const string& pass) { 
-	return digits.find_first_of(pass) != string::npos; 
+	return digits.find_first_of(pass) != NOT_FOUND;
 }
 
 bool has_symbols(const string& pass) { 
-	return symbols.find_first_of(pass) != string::npos; 
+	return symbols.find_first_of(pass) != NOT_FOUND;
 }
 
 bool has_digits_letters(const string& pass) { 
@@ -34,23 +35,23 @@ bool has_symbols_digits_letters(const string& pass) {
 }
 
 void mode_menu(const char* msg) {
-	cout << "Modes of generating\n";
-	cout << "1. only letters\n";
-	cout << "2. only digits\n";
-	cout << "3. only symbols\n";
-	cout << "4. digits and letters\n";
-	cout << "5. letters and symbols\n";
-	cout << "6. digits and symbols\n";
-	cout << "7. symbols, digits and letters\n";
-	cout << msg;
+	cout << "Modes of generating\n"
+		<< "1. only letters\n"
+		<< "2. only digits\n"
+		<< "3. only symbols\n"
+		<< "4. digits and letters\n"
+		<< "5. letters and symbols\n"
+		<< "6. digits and symbols\n"
+		<< "7. symbols, digits and letters\n"
+		<< msg;
 }
 
 void menu(const char* msg) { cout << msg; }
 
 void range(unsigned upper, unsigned bottom) {
-	cout << " (" << bottom << " - ";
-	cout << upper << "): ";
+	cout << " (" << bottom << " - " << upper << "): ";
 }
+
 unsigned set_option(options menu, unsigned upper, unsigned bottom, const char* msg) {
 	menu(msg);
 	range(upper, bottom);
