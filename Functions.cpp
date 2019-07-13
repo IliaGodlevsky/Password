@@ -79,7 +79,8 @@ string save_path()
 {
 	string filename;
 	cout << "Enter filename: ";
-	cin >> filename;
+	cin.get();
+	getline(cin, filename);
 	return save_folder + filename;
 }
 
