@@ -52,7 +52,7 @@ void range(unsigned upper, unsigned bottom) {
 	cout << " (" << bottom << " - " << upper << "): ";
 }
 
-unsigned set_option(options menu, unsigned upper, unsigned bottom, const char* msg) {
+unsigned set_option(options menu, const char* msg, unsigned upper, unsigned bottom) {
 	menu(msg);
 	range(upper, bottom);
 	return input(upper, bottom, msg);
@@ -68,7 +68,7 @@ unsigned input(unsigned upper, unsigned bottom, const char* msg) {
 		range(upper, bottom);
 		cin >> choice;
 	}
-	return choice - 1;
+	return choice;
 }
 
 bool wrong(unsigned choice, unsigned upper, unsigned bottom) {

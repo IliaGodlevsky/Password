@@ -33,5 +33,5 @@ public:
 };
 
 void set_settings(Settings& settings);
-void generate(Settings& opt, Generator& gen);
+void generate(Settings& set, Generator& gen);
 #endif

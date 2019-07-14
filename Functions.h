@@ -25,7 +25,8 @@ void menu(const char* msg);
 void range(unsigned upper, unsigned bottom);
 
 // input functions
-unsigned set_option(options menu, unsigned upper, unsigned bottom, const char* msg);
+unsigned set_option(options menu, const char* msg, 
+	unsigned upper = 1, unsigned bottom = 0);
 unsigned input(unsigned upper, unsigned bottom, const char* msg);
 bool wrong(unsigned choice, unsigned upper, unsigned bottom);
 string save_path();

@@ -7,6 +7,5 @@ int main()
 	Generator generator;
 	do 
 		generate(options, generator); 
-	while (set_option(menu, YES, NO, ans) + 1);
-	system("pause");
+	while (set_option(menu, ans));
 }
