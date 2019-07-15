@@ -72,7 +72,9 @@ unsigned input(unsigned upper, unsigned bottom, const char* msg) {
 }
 
 bool wrong(unsigned choice, unsigned upper, unsigned bottom) {
-	return choice < bottom || choice > upper || !cin;
+	return choice < bottom 
+		|| choice > upper 
+		|| !cin;
 }
 
 string save_path()

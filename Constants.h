@@ -3,6 +3,8 @@
 
 #include "Functions.h"
 
+static constexpr unsigned NOT_FOUND = string::npos;
+
 static const char* ans = "One more";
 static const char* mode_msg = "Choose mode";
 static const char* length_msg = "Enter length of the password";

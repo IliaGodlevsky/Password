@@ -5,8 +5,6 @@
 
 using std::string;
 
-static constexpr unsigned NOT_FOUND = string::npos;
-
 using has_char = bool(*)(const string&);
 using options = void(*)(const char*);
 
