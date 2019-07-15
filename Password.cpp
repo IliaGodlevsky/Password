@@ -1,4 +1,3 @@
-#include "Functions.h"
 #include "Generator.h"
 
 int main()
