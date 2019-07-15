@@ -7,4 +7,5 @@ int main()
 	do 
 		generate(options, generator); 
 	while (set_option(menu, ans));
+	return 0;
 }

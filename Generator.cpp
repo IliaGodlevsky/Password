@@ -12,26 +12,30 @@ using std::random_device;
 using std::mt19937;
 using std::shuffle;
 
-string Generator::generate_symbols()const {
+string Generator::generate_symbols()const 
+{
 	random_device random;
 	string word = strings[settings.mode - 1];
 	shuffle(word.begin(), word.end(), mt19937(random()));
 	return string(word.begin(), word.begin() + settings.length);
 }
 
-string Generator::create_password(has_char has)const {
+string Generator::create_password(has_char has)const 
+{
 	string password = generate_symbols();
 	while (!has(password))
 		password = generate_symbols();
 	return password;
 }
 
-void Generator::create_passwords() {
+void Generator::create_passwords() 
+{
 	for (unsigned i = 0; i < settings.examples; i++)
 		passwords.push_back(create_password(has[settings.mode - 1]));
 }
 
-ostream& operator << (ostream& os, const Generator& gen) {
+ostream& operator << (ostream& os, const Generator& gen) 
+{
 	for (auto &x : gen.passwords) os << x << endl;
 	return os;
 }
@@ -43,7 +47,8 @@ Generator&::Generator::operator=(const Settings& settings)
 	return *this;
 }
 
-void set_settings(Settings& settings) {
+void set_settings(Settings& settings) 
+{
 	settings.mode = set_option(mode_menu, 
 		mode_msg, MODES, MIN_MODE);
 	settings.length = set_option(menu, length_msg, 
@@ -52,7 +57,8 @@ void set_settings(Settings& settings) {
 		example_msg, EXAMPLES_MAX, EXAMPLES_MIN);
 }
 
-void generate(Settings& set, Generator& gen){
+void generate(Settings& set, Generator& gen)
+{
 	system("cls");
 	ofstream fout;
 	set_settings(set);

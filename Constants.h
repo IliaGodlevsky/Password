@@ -17,8 +17,8 @@ static const string letters = lower_letters + upper_letters;
 static const string symbols = "![]{}|%*()?@#$~&";
 static const string digits = "0123456789";
 
-enum {
-	NO, YES,
+enum 
+{
 	MIN_LENGTH = 3,
 	MIN_MODE = 1,
 	MODES = 7,
@@ -26,7 +26,8 @@ enum {
 	EXAMPLES_MIN = 10
 };
 
-static const string strings[MODES] {
+static const string strings[MODES] 
+{
 	letters,
 	digits,
 	symbols,
@@ -36,7 +37,8 @@ static const string strings[MODES] {
 	digits + letters + symbols 
 };
 
-static const unsigned lengths[MODES] {
+static const unsigned lengths[MODES] 
+{
 	letters.size(),
 	digits.size(),
 	symbols.size(),
@@ -46,7 +48,8 @@ static const unsigned lengths[MODES] {
 	letters.size() + symbols.size() + digits.size()
 };
 
-static const has_char has[MODES]{
+static const has_char has[MODES]
+{
 	has_letters,
 	has_digits,
 	has_symbols,

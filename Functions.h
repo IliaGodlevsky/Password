@@ -5,6 +5,7 @@
 
 using std::string;
 
+// pointers to a function
 using has_char = bool(*)(const string&);
 using options = void(*)(const char*);
 
@@ -25,8 +26,10 @@ void range(unsigned upper, unsigned bottom);
 // input functions
 unsigned set_option(options menu, const char* msg, 
 	unsigned upper = 1, unsigned bottom = 0);
-unsigned input(unsigned upper, unsigned bottom, const char* msg);
-bool wrong(unsigned choice, unsigned upper, unsigned bottom);
+unsigned input(unsigned upper, 
+	unsigned bottom, const char* msg);
+bool wrong(unsigned choice, 
+	unsigned upper, unsigned bottom);
 string save_path();
 void eat_line();
 #endif
