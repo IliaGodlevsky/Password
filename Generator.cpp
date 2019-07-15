@@ -12,9 +12,6 @@ using std::random_device;
 using std::mt19937;
 using std::shuffle;
 
-Generator::Generator(const Settings& settings) :
-	settings(settings) {}
-
 string Generator::generate_symbols()const {
 	random_device random;
 	string word = strings[settings.mode - 1];
@@ -41,9 +38,7 @@ ostream& operator << (ostream& os, const Generator& gen) {
 
 Generator&::Generator::operator=(const Settings& settings)
 {
-	this->settings.mode = settings.mode;
-	this->settings.length = settings.length;
-	this->settings.examples = settings.examples;
+	this->settings = settings;
 	passwords.clear();
 	return *this;
 }

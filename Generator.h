@@ -25,8 +25,6 @@ private:
 	string generate_symbols()const;
 	string create_password(has_char has)const;
 public:
-	Generator() {}
-	Generator(const Settings& settings);
 	friend ostream& operator << (ostream& os, const Generator& gen);
 	Generator& operator=(const Settings& settings);
 	void create_passwords();
