@@ -6,6 +6,6 @@ int main()
 	Generator generator;
 	do 
 		generate(options, generator); 
-	while (set_option(menu, ans));
+	while (set_option(menu, answer));
 	return 0;
 }
