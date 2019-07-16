@@ -4,25 +4,17 @@
 
 #include "Generator.h"
 
-using std::cout;
-using std::cin;
-using std::endl;
-using std::ofstream;
-using std::random_device;
-using std::mt19937;
-using std::shuffle;
-
-string Generator::generate_symbols()const 
+std::string Generator::generate_symbols()const 
 {
-	random_device random;
-	string word = strings[settings.mode - 1];
-	shuffle(word.begin(), word.end(), mt19937(random()));
-	return string(word.begin(), word.begin() + settings.length);
+	std::random_device random;
+	std::string word = strings[settings.mode - 1];
+	std::shuffle(word.begin(), word.end(), std::mt19937(random()));
+	return std::string(word.begin(), word.begin() + settings.length);
 }
 
-string Generator::create_password(has_char has)const 
+std::string Generator::create_password(has_char has)const 
 {
-	string password = generate_symbols();
+	std::string password = generate_symbols();
 	while (!has(password))
 		password = generate_symbols();
 	return password;
@@ -34,9 +26,9 @@ void Generator::create_passwords()
 		passwords.push_back(create_password(has[settings.mode - 1]));
 }
 
-ostream& operator << (ostream& os, const Generator& gen) 
+std::ostream& operator << (std::ostream& os, const Generator& gen) 
 {
-	for (auto &x : gen.passwords) os << x << endl;
+	for (auto &x : gen.passwords) os << x << std::endl;
 	return os;
 }
 
@@ -60,12 +52,12 @@ void set_settings(Settings& settings)
 void generate(Settings& set, Generator& gen)
 {
 	system("cls");
-	ofstream fout;
+	std::ofstream fout;
 	set_settings(set);
 	gen = set;
 	gen.create_passwords();
 	fout.open(save_path());
 	fout << gen;
-	cout << gen;
+	std::cout << gen;
 	fout.close();
 }

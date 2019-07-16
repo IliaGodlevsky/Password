@@ -3,7 +3,7 @@
 
 #include "Functions.h"
 
-static constexpr unsigned NOT_FOUND = string::npos;
+static constexpr unsigned NOT_FOUND = std::string::npos;
 
 static const char* answer = "One more";
 static const char* mode_msg = "Choose mode";
@@ -11,11 +11,11 @@ static const char* length_msg = "Enter length of the password";
 static const char* example_msg = "Enter number of examples";
 static const char* save_folder = "Save/";
 
-static const string lower_letters = "abcdefghijklmnopqrstuvwxyz";
-static const string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-static const string letters = lower_letters + upper_letters;
-static const string symbols = "![]{}|%*()?@#$~&";
-static const string digits = "0123456789";
+static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
+static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+static const std::string letters = lower_letters + upper_letters;
+static const std::string symbols = "![]{}|%*()?@#$~&";
+static const std::string digits = "0123456789";
 
 enum 
 {
@@ -26,7 +26,7 @@ enum
 	EXAMPLES_MIN = 10
 };
 
-static const string strings[MODES] 
+static const std::string strings[MODES] 
 {
 	letters,
 	digits,

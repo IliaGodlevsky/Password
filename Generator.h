@@ -8,10 +8,6 @@
 #include "Constants.h"
 #include "Functions.h"
 
-using std::vector;
-using std::string;
-using std::ostream;
-
 struct Settings 
 { 
 	unsigned mode = MIN_MODE;			// mode of generating passwords
@@ -23,12 +19,12 @@ class Generator
 {
 private:
 	Settings settings;
-	vector<string> passwords;			// array of generated passwords
-	string generate_symbols()const;
-	string create_password(has_char has)const;
+	std::vector<std::string> passwords;	// array of generated passwords
+	std::string generate_symbols()const;
+	std::string create_password(has_char has)const;
 public:
-	friend ostream& operator << 
-		(ostream& os, const Generator& gen);
+	friend std::ostream& operator << 
+		(std::ostream& os, const Generator& gen);
 	Generator& operator=(const Settings& settings);
 	void create_passwords();
 };
