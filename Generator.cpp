@@ -32,7 +32,7 @@ std::ostream& operator << (std::ostream& os, const Generator& gen)
 	return os;
 }
 
-Generator&::Generator::operator=(const Settings& settings)
+Generator& Generator::operator=(const Settings& settings)
 {
 	this->settings = settings;
 	passwords.clear();
