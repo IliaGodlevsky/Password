@@ -2,31 +2,32 @@
 #define GEN_H_
 
 #include <iostream>
-#include <string>
 #include <vector>
 
 #include "Constants.h"
 #include "Functions.h"
 
+using Words = std::vector<Word>;
+
 struct Settings 
 { 
-	unsigned mode = MIN_MODE;			// mode of generating passwords
-	unsigned length = MIN_LENGTH;		// length of generated password
-	unsigned examples = EXAMPLES_MIN;	// number of generated examples
+	size_t mode;		// mode of generating passwords
+	size_t length;		// length of generated password
+	size_t examples;	// number of generated examples
 };
 
 class Generator 
 {
 private:
 	Settings settings;
-	std::vector<std::string> passwords;	// array of generated passwords
-	std::string generate_symbols()const;
-	std::string create_password(has_char has)const;
+	Words words;		// array of generated passwords
+	Word generate_symbols()const;
+	Word create_word(Control has)const;
 public:
 	friend std::ostream& operator << 
 		(std::ostream& os, const Generator& gen);
 	Generator& operator=(const Settings& settings);
-	void create_passwords();
+	void create_words();
 };
 
 void set_settings(Settings& settings);

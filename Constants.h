@@ -3,19 +3,21 @@
 
 #include "Functions.h"
 
-static constexpr unsigned NOT_FOUND = std::string::npos;
+#define CONST static const
 
-static const char* answer = "One more";
-static const char* mode_msg = "Choose mode";
-static const char* length_msg = "Enter length of the password";
-static const char* example_msg = "Enter number of examples";
-static const char* save_folder = "Save/";
+CONST size_t NOT_FOUND = std::string::npos;
 
-static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
-static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-static const std::string letters = lower_letters + upper_letters;
-static const std::string symbols = "![]{}|%*()?@#$~&";
-static const std::string digits = "0123456789";
+CONST char* answer = "One more";
+CONST char* mode_msg = "Choose mode";
+CONST char* length_msg = "Enter length of the password";
+CONST char* example_msg = "Enter number of examples";
+CONST char* save_folder = "Save/";
+
+CONST std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
+CONST std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+CONST std::string letters = lower_letters + upper_letters;
+CONST std::string symbols = "![]{}|%*()?@#$~&";
+CONST std::string digits = "0123456789";
 
 enum 
 {
@@ -26,7 +28,7 @@ enum
 	EXAMPLES_MIN = 10
 };
 
-static const std::string strings[MODES] 
+CONST std::string strings[MODES] 
 {
 	letters,
 	digits,
@@ -37,7 +39,7 @@ static const std::string strings[MODES]
 	digits + letters + symbols 
 };
 
-static const unsigned lengths[MODES] 
+CONST size_t lengths[MODES] 
 {
 	letters.size(),
 	digits.size(),
@@ -48,7 +50,7 @@ static const unsigned lengths[MODES]
 	letters.size() + symbols.size() + digits.size()
 };
 
-static const has_char has[MODES]
+CONST Control control[MODES]
 {
 	has_letters,
 	has_digits,
