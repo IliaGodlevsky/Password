@@ -3,63 +3,64 @@
 #include "Functions.h"
 #include "Constants.h"
 
-bool has_letters(const std::string& pass) 
+bool has_letters(const Password& pass) 
 { 
 	return letters.find_first_of(pass) != NOT_FOUND;
 }
 
-bool has_digits(const std::string& pass) 
+bool has_digits(const Password& pass)
 { 
 	return digits.find_first_of(pass) != NOT_FOUND;
 }
 
-bool has_symbols(const std::string& pass) 
+bool has_symbols(const Password& pass)
 { 
 	return symbols.find_first_of(pass) != NOT_FOUND;
 }
 
-bool has_digits_letters(const std::string& pass) 
+bool has_digits_letters(const Password& pass)
 { 
-	return has_digits(pass) && has_letters(pass); 
+	return has_digits(pass) && has_letters(pass);
 }
 
-bool has_letters_symbols(const std::string& pass) 
+bool has_letters_symbols(const Password& pass)
 { 
-	return has_letters(pass) && has_symbols(pass); 
+	return has_letters(pass) && has_symbols(pass);
 }
 
-bool has_digits_symbols(const std::string& pass) 
+bool has_digits_symbols(const Password& pass)
 { 
-	return has_digits(pass) && has_symbols(pass); 
+	return has_digits(pass) && has_symbols(pass);
 }
 
-bool has_symbols_digits_letters(const std::string& pass) 
+bool has_symbols_digits_letters(const Password& pass)
 { 
-	return has_digits_letters(pass) && has_symbols(pass); 
+	return has_digits_letters(pass) && has_symbols(pass);
 }
 
-void mode_menu(const char* msg) 
+void show_modes()
 {
-	std::cout << "Modes of generating\n"
-		<< "1. only letters\n"
-		<< "2. only digits\n"
-		<< "3. only symbols\n"
-		<< "4. digits and letters\n"
-		<< "5. letters and symbols\n"
-		<< "6. digits and symbols\n"
-		<< "7. symbols, digits and letters\n"
-		<< msg;
+	for (unsigned i = 0; i < MODES; i++)
+		std::cout << i + 1 << ". "
+		<< modes[i] << std::endl;
 }
 
-void menu(const char* msg) { std::cout << msg; }
+void mode_menu(Message msg)
+{
+	std::cout << mode_msg_second << std::endl;
+	show_modes();
+	std::cout << msg;
+}
+
+void menu(Message msg) { std::cout << msg; }
 
 void range(unsigned upper, unsigned bottom) 
 {
 	std::cout << " (" << bottom << " - " << upper << "): ";
 }
 
-unsigned set_option(options menu, 
-	const char* msg, unsigned upper, unsigned bottom) 
+unsigned set_option(Options menu, 
+	Message msg, unsigned upper, unsigned bottom)
 {
 	menu(msg);
 	range(upper, bottom);
@@ -67,7 +68,7 @@ unsigned set_option(options menu,
 }
 
 unsigned input(unsigned upper, 
-	unsigned bottom, const char* msg) 
+	unsigned bottom, Message msg)
 {
 	unsigned choice;
 	std::cin >> choice;
@@ -92,7 +93,7 @@ bool wrong(unsigned choice,
 std::string save_path() 
 {
 	std::string filename;
-	std::cout << "Enter filename: ";
+	std::cout << path_msg;
 	std::cin.get();
 	getline(std::cin, filename);
 	return save_folder + filename;
@@ -100,8 +101,8 @@ std::string save_path()
 
 void eat_line() 
 {
-	// cuts symbols in the input stream
+	// flings away bad input
 	std::cin.clear();
-	while (std::cin.get() != '\n')
+	while (!iscntrl(std::cin.get()))
 		continue;
 }

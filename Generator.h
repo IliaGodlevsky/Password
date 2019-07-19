@@ -2,26 +2,26 @@
 #define GEN_H_
 
 #include <iostream>
-#include <string>
 #include <vector>
 
 #include "Constants.h"
-#include "Functions.h"
+
+typedef std::vector<Password> Passwords;
 
 struct Settings 
 { 
-	unsigned mode = MIN_MODE;			// mode of generating passwords
-	unsigned length = MIN_LENGTH;		// length of generated password
-	unsigned examples = EXAMPLES_MIN;	// number of generated examples
+	unsigned mode;			// mode of generating passwords
+	unsigned length;		// length of generated password
+	unsigned examples;		// number of generated examples
 };
 
 class Generator 
 {
 private:
 	Settings settings;
-	std::vector<std::string> passwords;	// array of generated passwords
-	std::string generate_symbols()const;
-	std::string create_password(has_char has)const;
+	Passwords passwords;	// array of generated passwords
+	Password generate_symbols()const;
+	Password create_password(Check check)const;
 public:
 	friend std::ostream& operator << 
 		(std::ostream& os, const Generator& gen);

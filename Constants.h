@@ -3,19 +3,23 @@
 
 #include "Functions.h"
 
-static constexpr unsigned NOT_FOUND = std::string::npos;
+typedef const std::string Blank;
 
-static const char* answer = "One more";
-static const char* mode_msg = "Choose mode";
-static const char* length_msg = "Enter length of the password";
-static const char* example_msg = "Enter number of examples";
-static const char* save_folder = "Save/";
-
-static const std::string lower_letters = "abcdefghijklmnopqrstuvwxyz";
-static const std::string upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-static const std::string letters = lower_letters + upper_letters;
-static const std::string symbols = "![]{}|%*()?@#$~&";
-static const std::string digits = "0123456789";
+static constexpr unsigned NOT_FOUND = Blank::npos;
+// messages for functions
+static Message path_msg = "Enter filename: ";
+static Message answer = "One more";
+static Message mode_msg_first = "Choose mode";
+static Message mode_msg_second = "Modes of generating";
+static Message length_msg = "Enter length of the password";
+static Message example_msg = "Enter number of examples";
+static Message save_folder = "Save/";
+// blanks for passwords
+static Blank lower_letters = "abcdefghijklmnopqrstuvwxyz";
+static Blank upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+static Blank letters = lower_letters + upper_letters;
+static Blank symbols = "!#$%&'()*+,-.:;<=>?@[]^_`{|}~";
+static Blank digits = "0123456789";
 
 enum 
 {
@@ -26,7 +30,7 @@ enum
 	EXAMPLES_MIN = 10
 };
 
-static const std::string strings[MODES] 
+static Blank strings[MODES]
 {
 	letters,
 	digits,
@@ -34,7 +38,7 @@ static const std::string strings[MODES]
 	digits + letters,
 	letters + symbols, 
 	digits + symbols,
-	digits + letters + symbols 
+	digits + letters + symbols
 };
 
 static const unsigned lengths[MODES] 
@@ -48,7 +52,7 @@ static const unsigned lengths[MODES]
 	letters.size() + symbols.size() + digits.size()
 };
 
-static const has_char has[MODES]
+static const Check check[MODES]
 {
 	has_letters,
 	has_digits,
@@ -57,5 +61,12 @@ static const has_char has[MODES]
 	has_letters_symbols,
 	has_digits_symbols,
 	has_symbols_digits_letters
+};
+
+static Message modes[MODES]
+{
+	"letters","digits","symbols","digits and letters",
+	"letters and symbols", "digits and symbols",
+	"symbols, digits and letters"
 };
 #endif
