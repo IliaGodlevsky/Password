@@ -4,38 +4,38 @@
 
 #include "Generator.h"
 
-Word Generator::generate_symbols()const 
+std::string Generator::generate_symbols()const 
 {
 	std::random_device random;
-	Word word = strings[settings.mode - 1];
+	std::string word = strings[settings.mode - 1];
 	std::shuffle(word.begin(), word.end(), std::mt19937(random()));
-	return Word(word.begin(), word.begin() + settings.length);
+	return std::string(word.begin(), word.begin() + settings.length);
 }
 
-Word Generator::create_word(Control control)const 
+std::string Generator::create_password(has_char has)const 
 {
-	Word word = generate_symbols();
-	while (!control(word))
-		word = generate_symbols();
-	return word;
+	std::string password = generate_symbols();
+	while (!has(password))
+		password = generate_symbols();
+	return password;
 }
 
-void Generator::create_words() 
+void Generator::create_passwords() 
 {
-	for (size_t i = 0; i < settings.examples; i++)
-		words.push_back(create_word(control[settings.mode - 1]));
+	for (unsigned i = 0; i < settings.examples; i++)
+		passwords.push_back(create_password(has[settings.mode - 1]));
 }
 
 std::ostream& operator << (std::ostream& os, const Generator& gen) 
 {
-	for (auto &x : gen.words) os << x << std::endl;
+	for (auto &x : gen.passwords) os << x << std::endl;
 	return os;
 }
 
 Generator& Generator::operator=(const Settings& settings)
 {
 	this->settings = settings;
-	words.clear();
+	passwords.clear();
 	return *this;
 }
 
@@ -55,7 +55,7 @@ void generate(Settings& set, Generator& gen)
 	std::ofstream fout;
 	set_settings(set);
 	gen = set;
-	gen.create_words();
+	gen.create_passwords();
 	fout.open(save_path());
 	fout << gen;
 	std::cout << gen;

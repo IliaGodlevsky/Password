@@ -3,37 +3,37 @@
 #include "Functions.h"
 #include "Constants.h"
 
-bool has_letters(const Word& pass) 
+bool has_letters(const std::string& pass) 
 { 
 	return letters.find_first_of(pass) != NOT_FOUND;
 }
 
-bool has_digits(const Word& pass) 
+bool has_digits(const std::string& pass) 
 { 
 	return digits.find_first_of(pass) != NOT_FOUND;
 }
 
-bool has_symbols(const Word& pass) 
+bool has_symbols(const std::string& pass) 
 { 
 	return symbols.find_first_of(pass) != NOT_FOUND;
 }
 
-bool has_digits_letters(const Word& pass) 
+bool has_digits_letters(const std::string& pass) 
 { 
 	return has_digits(pass) && has_letters(pass); 
 }
 
-bool has_letters_symbols(const Word& pass) 
+bool has_letters_symbols(const std::string& pass) 
 { 
 	return has_letters(pass) && has_symbols(pass); 
 }
 
-bool has_digits_symbols(const Word& pass) 
+bool has_digits_symbols(const std::string& pass) 
 { 
 	return has_digits(pass) && has_symbols(pass); 
 }
 
-bool has_symbols_digits_letters(const Word& pass) 
+bool has_symbols_digits_letters(const std::string& pass) 
 { 
 	return has_digits_letters(pass) && has_symbols(pass); 
 }
@@ -53,23 +53,23 @@ void mode_menu(const char* msg)
 
 void menu(const char* msg) { std::cout << msg; }
 
-void range(size_t upper, size_t bottom) 
+void range(unsigned upper, unsigned bottom) 
 {
 	std::cout << " (" << bottom << " - " << upper << "): ";
 }
 
-size_t set_option(Options menu, 
-	const char* msg, size_t upper, size_t bottom) 
+unsigned set_option(options menu, 
+	const char* msg, unsigned upper, unsigned bottom) 
 {
 	menu(msg);
 	range(upper, bottom);
 	return input(upper, bottom, msg);
 }
 
-size_t input(size_t upper, 
-	size_t bottom, const char* msg) 
+unsigned input(unsigned upper, 
+	unsigned bottom, const char* msg) 
 {
-	size_t choice;
+	unsigned choice;
 	std::cin >> choice;
 	while (wrong(choice, upper, bottom))
 	{
@@ -81,8 +81,8 @@ size_t input(size_t upper,
 	return choice;
 }
 
-bool wrong(size_t choice, 
-	size_t upper, size_t bottom) 
+bool wrong(unsigned choice, 
+	unsigned upper, unsigned bottom) 
 {
 	return choice < bottom 
 		|| choice > upper 

@@ -3,31 +3,31 @@
 
 #include <string>
 
-using Word = std::string;
-using Control = bool(*)(const std::string&);
-using Options = void(*)(const char*);
+// pointers to a function
+using has_char = bool(*)(const std::string&);
+using options = void(*)(const char*);
 
 // 'has' functions
-bool has_letters(const Word& pass);
-bool has_digits(const Word& pass);
-bool has_symbols(const Word& pass);
-bool has_digits_letters(const Word& pass);
-bool has_letters_symbols(const Word& pass);
-bool has_digits_symbols(const Word& pass);
-bool has_symbols_digits_letters(const Word& pass);
+bool has_letters(const std::string& pass);
+bool has_digits(const std::string& pass);
+bool has_symbols(const std::string& pass);
+bool has_digits_letters(const std::string& pass);
+bool has_letters_symbols(const std::string& pass);
+bool has_digits_symbols(const std::string& pass);
+bool has_symbols_digits_letters(const std::string& pass);
 
 // menu functions
 void mode_menu(const char* msg);
 void menu(const char* msg);
-void range(size_t upper, size_t bottom);
+void range(unsigned upper, unsigned bottom);
 
 // input functions
-size_t set_option(Options menu, const char* msg, 
-	size_t upper = 1, size_t bottom = 0);
-size_t input(size_t upper, 
-size_t bottom, const char* msg);
-bool wrong(size_t choice, 
-	size_t upper, size_t bottom);
+unsigned set_option(options menu, const char* msg, 
+	unsigned upper = 1, unsigned bottom = 0);
+unsigned input(unsigned upper, 
+	unsigned bottom, const char* msg);
+bool wrong(unsigned choice, 
+	unsigned upper, unsigned bottom);
 std::string save_path();
 void eat_line();
 #endif
