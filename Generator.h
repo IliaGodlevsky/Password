@@ -6,20 +6,20 @@
 
 #include "Constants.h"
 
-typedef std::vector<Password> Passwords;
+using Passwords = std::vector<Password>;
 
 struct Settings 
 { 
-	unsigned mode;			// mode of generating passwords
-	unsigned length;		// length of generated password
-	unsigned examples;		// number of generated examples
+	unsigned mode = MIN_MODE;			// mode of generating passwords
+	unsigned length = MIN_LENGTH;		// length of generated password
+	unsigned examples = EXAMPLES_MIN;	// number of generated examples
 };
 
 class Generator 
 {
 private:
 	Settings settings;
-	Passwords passwords;	// array of generated passwords
+	Passwords passwords;				// array of generated passwords
 	Password generate_symbols()const;
 	Password create_password(Check check)const;
 public:

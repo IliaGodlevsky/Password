@@ -5,8 +5,8 @@
 
 enum { NO, YES };
 // nicknames
-typedef std::string Password;
-typedef const char* Message;
+using Password = std::string;
+using Message = const char*;
 using Check = bool(*)(const Password&);
 using Options = void(*)(const char*);
 // 'check' functions

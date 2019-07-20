@@ -3,7 +3,7 @@
 
 #include "Functions.h"
 
-typedef const std::string Blank;
+using Blank = const std::string;
 
 static constexpr unsigned NOT_FOUND = Blank::npos;
 // messages for functions
@@ -18,7 +18,7 @@ static Message save_folder = "Save/";
 static Blank lower_letters = "abcdefghijklmnopqrstuvwxyz";
 static Blank upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static Blank letters = lower_letters + upper_letters;
-static Blank symbols = "!#$%&'()*+,-.:;<=>?@[]^_`{|}~";
+static Blank symbols = "!#$%&()*?@[]{|}~";
 static Blank digits = "0123456789";
 
 enum 
@@ -65,8 +65,12 @@ static const Check check[MODES]
 
 static Message modes[MODES]
 {
-	"letters","digits","symbols","digits and letters",
-	"letters and symbols", "digits and symbols",
+	"letters",
+	"digits",
+	"symbols",
+	"digits and letters",
+	"letters and symbols",
+	"digits and symbols",
 	"symbols, digits and letters"
 };
 #endif
