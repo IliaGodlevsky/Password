@@ -41,8 +41,7 @@ bool has_symbols_digits_letters(const Password& pass)
 void show_modes()
 {
 	for (unsigned i = 0; i < MODES; i++)
-		std::cout << i + 1 << ". "
-		<< modes[i] << std::endl;
+		std::cout << i + 1 << ". " << modes[i] << std::endl;
 }
 
 void mode_menu(Message msg)
